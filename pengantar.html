@@ -376,6 +376,14 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengantar-web-mining">Pengantar Web Mining</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#web-crawling">Web Crawling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#web-data-processing">Web Data Processing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pembelajaran-terawasi-supervised-learning">Pembelajaran Terawasi (Supervised Learning)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pembelajaran-tak-terawasi-unsupervised-learning">Pembelajaran Tak Terawasi (Unsupervised Learning)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#web-content-mining">Web Content Mining</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#web-usage-mining">Web Usage Mining</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#web-structure-mining">Web Structure Mining</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deployment-system">Deployment System</a></li>
 </ul>
             </nav>
         </div>
@@ -391,12 +399,83 @@ document.write(`
 <h1>Pengantar<a class="headerlink" href="#pengantar" title="Link to this heading">#</a></h1>
 <section id="pengantar-web-mining">
 <h2>Pengantar Web Mining<a class="headerlink" href="#pengantar-web-mining" title="Link to this heading">#</a></h2>
-<p>Web mining merupakan teknik data mining dan machine learning untuk menggali informasi dari data web (konten, struktur, dan pengunaan), dengan membayangkan kamu suka menonton drama korea lalu netflix bisa tau itu karena</p>
+<p>Web mining merupakan teknik data mining dan machine learning untuk menggali informasi dari data web (konten, struktur, dan pengunaan), dengan membayangkan kamu suka melakukan pencarian dengan google<br />
+Dengan tujuan utamanya adalah menemukan pola, pengetahuan, atau insight dari data web.</p>
+</section>
+<section id="web-crawling">
+<h2>Web Crawling<a class="headerlink" href="#web-crawling" title="Link to this heading">#</a></h2>
+<p>Nah sebelum bisa “menggali” dari data web, kita membutuhkan cara buat mengambil datanya. Web Crawling adalah proses otomatis untuk menjelajahi halaman web satu per satu menggunakan robot kecil (disebut crawler/spider/bot). Crawler mulai dari satu halaman, lalu mengikuti link-link yang ada didalamnya sampai terkumpul banyak data.
+yang biasa menggunakan :</p>
 <ol class="arabic simple">
-<li><p>melihat isi video (judul, deskripsi jadi lebih fokus kepada isi web) content mining</p></li>
-<li><p>melihat kebiasaan kamu menonton (jam berapa, video apa, jadi lebih fokus kepada perilaku perilaku pengguna) usage mining</p></li>
-<li><p>melihat hubungan antar drama korea (drama A mirip dengan drama B, jadi lebih fokus pada hubungan antar situs) structure mining<br />
-Dengan tujuan utamanya adalah menemukan pola, pengetahuan, atau insight dari data web.</p></li>
+<li><p>Scrapy (Python) framework crawling</p></li>
+<li><p>BeautifulSoup (Python) ambil teks dari HTML</p></li>
+<li><p>Selenium buat crawling web yang butuh interaksi (dengan contoh harus klik tombol dulu)</p></li>
+</ol>
+</section>
+<section id="web-data-processing">
+<h2>Web Data Processing<a class="headerlink" href="#web-data-processing" title="Link to this heading">#</a></h2>
+<p>Data web yang kita ambil biasanya “kotor” banyak tag HTML, script, iklan, dan simbol aneh. Maka, processing itu digunakan untuk membersihkan dan merapikan data sebelum dipakai.
+tahap tahap pada umumnya :</p>
+<ol class="arabic simple">
+<li><p>Parsing HTML (mengambil konten inti yaitu judul, isi artikel)</p></li>
+<li><p>Cleaning teks (menghapus angka, tanda baca, simbol)</p></li>
+<li><p>Stopword removal (hapus kata umum seperti ‘dan’, ‘atau’)</p></li>
+<li><p>Stemming (mengubah kata ke bentuk dasar seperti ‘berlari’ ke ‘lari’)</p></li>
+<li><p>representasi data (yaitu mengubah teks jadi angka TF-IDF)</p></li>
+</ol>
+</section>
+<section id="pembelajaran-terawasi-supervised-learning">
+<h2>Pembelajaran Terawasi (Supervised Learning)<a class="headerlink" href="#pembelajaran-terawasi-supervised-learning" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>dapat dicontohkan dengan kita memberikan data + label ~ model belajar berhubungan keduanya</p></li>
+<li><p>setelah itu, kita memiliki data baru (tanpa label)model bisa tebak jawabannya
+menggunakan algoritma umum yaitu Decesion Tree, Naive Bayes, Logistic Regression, SVM, Neural Networks</p></li>
+</ol>
+</section>
+<section id="pembelajaran-tak-terawasi-unsupervised-learning">
+<h2>Pembelajaran Tak Terawasi (Unsupervised Learning)<a class="headerlink" href="#pembelajaran-tak-terawasi-unsupervised-learning" title="Link to this heading">#</a></h2>
+<p>kebalikan dari belajar tanpa label, jadi model hanya memberikan data mentah lalu mencari pola sendiri
+menggunakan algoritma umum K-Means, Hierarchical Clustering, DBSCAN, PCA, LDA</p>
+</section>
+<section id="web-content-mining">
+<h2>Web Content Mining<a class="headerlink" href="#web-content-mining" title="Link to this heading">#</a></h2>
+<p>melihat isi pencarian (judul, deskripsi jadi lebih fokus kepada isi web)
+menggunakan teknik :</p>
+<ol class="arabic simple">
+<li><p>Text Classification</p></li>
+<li><p>Sentiment Analysis</p></li>
+<li><p>Named Entity Recognition</p></li>
+<li><p>Keyword Extraction</p></li>
+</ol>
+</section>
+<section id="web-usage-mining">
+<h2>Web Usage Mining<a class="headerlink" href="#web-usage-mining" title="Link to this heading">#</a></h2>
+<p>melihat kebiasaan kamu melakukan pencarian (jam berapa, pencarian apa, jadi lebih fokus kepada perilaku perilaku pengguna)
+Menggunakan Teknik :</p>
+<ol class="arabic simple">
+<li><p>Google Analytics, Matomo</p></li>
+<li><p>Apache log parser, Hadoop/spark untuk data besar</p></li>
+</ol>
+</section>
+<section id="web-structure-mining">
+<h2>Web Structure Mining<a class="headerlink" href="#web-structure-mining" title="Link to this heading">#</a></h2>
+<p>melihat hubungan antar pencarian (pencarian A mirip dengan pencarian B, jadi lebih fokus pada hubungan antar situs)
+Menggunaka  teknik :</p>
+<ol class="arabic simple">
+<li><p>NetworkX (Python) ~ analisis graph</p></li>
+<li><p>Gephi</p></li>
+<li><p>neo4j</p></li>
+</ol>
+</section>
+<section id="deployment-system">
+<h2>Deployment System<a class="headerlink" href="#deployment-system" title="Link to this heading">#</a></h2>
+<p>Kalau semua sudah jadi (crawling ~ preprocessing ~ modeling) langkah terakhir adalah deplot sistem supaya dapat digunakan orang lain
+dengan cara :</p>
+<ol class="arabic simple">
+<li><p>Buat API (bisa menggunakan Flask,FastAPI)</p></li>
+<li><p>Inetgrasi ke dashboard (streamlist, dash)</p></li>
+<li><p>deploy ke cloud (AWS, Google Cloud, Azure)</p></li>
+<li><p>bisa juga menggunakan Docker dengan tujuan supaya gampang dipindah pindah</p></li>
 </ol>
 </section>
 </section>
@@ -457,6 +536,14 @@ Dengan tujuan utamanya adalah menemukan pola, pengetahuan, atau insight dari dat
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengantar-web-mining">Pengantar Web Mining</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#web-crawling">Web Crawling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#web-data-processing">Web Data Processing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pembelajaran-terawasi-supervised-learning">Pembelajaran Terawasi (Supervised Learning)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pembelajaran-tak-terawasi-unsupervised-learning">Pembelajaran Tak Terawasi (Unsupervised Learning)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#web-content-mining">Web Content Mining</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#web-usage-mining">Web Usage Mining</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#web-structure-mining">Web Structure Mining</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deployment-system">Deployment System</a></li>
 </ul>
   </nav></div>
 
