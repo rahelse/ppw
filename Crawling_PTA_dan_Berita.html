@@ -1,0 +1,2710 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Crawling Data PTA dan Berita &#8212; Pencarian dan Penambangan Web</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Crawling_PTA_dan_Berita';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Klasifikasi dan LDA" href="Klasifikasi_dan_LDA.html" />
+    <link rel="prev" title="Crawling Data" href="Crawling_Data.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/rahel.jpeg" class="logo__image only-light" alt="Pencarian dan Penambangan Web - Home"/>
+    <script>document.write(`<img src="_static/rahel.jpeg" class="logo__image only-dark" alt="Pencarian dan Penambangan Web - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Crawling_Data.html">Crawling Data</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Crawling Data PTA dan Berita</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Klasifikasi_dan_LDA.html">Klasifikasi dan LDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UTS_Penambangan_WEB.html">Analisa Klasifikasi Berita</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="pembersihan_dan_filtrasi.html">Filtering Dataset web use</a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FCrawling_PTA_dan_Berita.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Crawling_PTA_dan_Berita.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Crawling Data PTA dan Berita</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Crawling Data PTA dan Berita</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#crawling-portal-tugas-akhir">Crawling Portal Tugas Akhir</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#link-keluar">Link Keluar</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#penghapusan-kata-umum">Penghapusan Kata umum</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menghilangkan-simbol-tanda-baca">Menghilangkan simbol tanda baca</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cek-ejaan-pembakuan-kata">Cek ejaan pembakuan kata</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stemming-dan-lematisasi">stemming dan lematisasi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tokenisasi">tokenisasi</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#crawling-berita">Crawling Berita</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">penghapusan kata umum</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">menghilangkan simbol tanda baca</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">cek ejaan pembakuan kata</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">stemming dan lematisasi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">tokenisasi</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="crawling-data-pta-dan-berita">
+<h1>Crawling Data PTA dan Berita<a class="headerlink" href="#crawling-data-pta-dan-berita" title="Permalink to this heading">#</a></h1>
+<section id="crawling-portal-tugas-akhir">
+<h2>Crawling Portal Tugas Akhir<a class="headerlink" href="#crawling-portal-tugas-akhir" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">drive</span>
+<span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">drive</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;google&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="c1"># Baca file CSV</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;/content/drive/MyDrive/PPW/pta_fatek_3halaman.csv&quot;</span><span class="p">)</span>
+
+<span class="c1"># Tampilkan informasi total entri</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;📊 Total entri: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;✅ Data berhasil diambil dari 3 halaman tiap prodi Fakultas Teknik.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Tampilkan tabel rapih</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>📊 Total entri: 135
+✅ Data berhasil diambil dari 3 halaman tiap prodi Fakultas Teknik.
+</pre></div>
+</div>
+<div class="output text_html">
+  <div id="df-cb2deb92-707e-4951-a90f-cc172e2a9652" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>penulis</th>
+      <th>judul</th>
+      <th>pembimbing_pertama</th>
+      <th>pembimbing_kedua</th>
+      <th>abstrak</th>
+      <th>prodi</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>A.Ubaidillah S.Kom</td>
+      <td>PERANCANGAN DAN IMPLEMENTASI SISTEM DATABASE \...</td>
+      <td>Budi Setyono M.T</td>
+      <td>NaN</td>
+      <td>Sistem  informasi  akademik  (SIAKAD) merupaka...</td>
+      <td>Teknik Informatika</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>M. Basith Ardianto,</td>
+      <td>APLIKASI KONTROL DAN MONITORING JARINGAN KOMPU...</td>
+      <td>Drs. Budi Soesilo, MT</td>
+      <td>NaN</td>
+      <td>Berjalannya koneksi jaringan komputer dengan l...</td>
+      <td>Teknik Informatika</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Akhmad Suyandi, S.Kom</td>
+      <td>RANCANG BANGUN APLIKASI PROXY SERVER UNTUK\r\n...</td>
+      <td>Drs. Budi Soesilo, M.T</td>
+      <td>NaN</td>
+      <td>Web server adalah sebuah perangkat lunak serve...</td>
+      <td>Teknik Informatika</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Heri Supriyanto</td>
+      <td>SISTEM PENDUKUNG KEPUTUSAN OPTIMASI PENJADWALA...</td>
+      <td>Mulaab, S.Si., M.Kom</td>
+      <td>NaN</td>
+      <td>Penjadwalan  kuliah  di  Perguruan  Tinggi  me...</td>
+      <td>Teknik Informatika</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Septian Rahman Hakim</td>
+      <td>SISTEM AUGMENTED REALITY ANIMASI BENDA BERGERA...</td>
+      <td>Arik Kurniawati, S.Kom., M.T.</td>
+      <td>NaN</td>
+      <td>Seiring perkembangan teknologi yang ada diduni...</td>
+      <td>Teknik Informatika</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>130</th>
+      <td>DEWI AMALIYA ULFA</td>
+      <td>Pengaruh Penerapan Pembelajaran Tematik Integr...</td>
+      <td>Mujtahidin, S.Pd., M.Pd</td>
+      <td>NaN</td>
+      <td>Penelitian ini bertujuan untuk mengetahui peng...</td>
+      <td>Mekatronika</td>
+    </tr>
+    <tr>
+      <th>131</th>
+      <td>RIZKA AINUN JARIYAH</td>
+      <td>Pengaruh Metode Pembelajaran Bermain Peran (Ro...</td>
+      <td>Eva Ari Wahyuni, S.Pd., M.Si</td>
+      <td>NaN</td>
+      <td>Penelitian ini bertujuan untuk mengetahui peng...</td>
+      <td>Mekatronika</td>
+    </tr>
+    <tr>
+      <th>132</th>
+      <td>LAELA ROKHMATUL KAROMAH</td>
+      <td>PENGGUNAAN MEDIA PEMBELAJARAN KOTAK CERITA BER...</td>
+      <td>Sulaiman, S.Pd., M.Pd</td>
+      <td>NaN</td>
+      <td>Di lapangan pada umumnya siswa masih belum mam...</td>
+      <td>Mekatronika</td>
+    </tr>
+    <tr>
+      <th>133</th>
+      <td>Yuliana</td>
+      <td>Pengaruh Penggunaan Metode Demonstrasi Terhada...</td>
+      <td>Eva Ari Wahyuni, S.Pd., M.Si</td>
+      <td>NaN</td>
+      <td>Penelitian “Pengaruh Penggunaan Metode Demonst...</td>
+      <td>Mekatronika</td>
+    </tr>
+    <tr>
+      <th>134</th>
+      <td>Hendry Purnomo</td>
+      <td>KOMPARASI PRESTASI BELAJAR SISWA ANTARA MODEL ...</td>
+      <td>Badrud Tamam, S.Si., M.Pd.</td>
+      <td>NaN</td>
+      <td>Penelitian ini bertujuan untuk mengetahui, 1) ...</td>
+      <td>Mekatronika</td>
+    </tr>
+  </tbody>
+</table>
+<p>135 rows × 6 columns</p>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-cb2deb92-707e-4951-a90f-cc172e2a9652')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-cb2deb92-707e-4951-a90f-cc172e2a9652 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-cb2deb92-707e-4951-a90f-cc172e2a9652');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+    <div id="df-f0057b75-6966-4345-a02c-160ae4918c71">
+      <button class="colab-df-quickchart" onclick="quickchart('df-f0057b75-6966-4345-a02c-160ae4918c71')"
+                title="Suggest charts"
+                style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+     width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+    </g>
+</svg>
+      </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+      <script>
+        async function quickchart(key) {
+          const quickchartButtonEl =
+            document.querySelector('#' + key + ' button');
+          quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+          quickchartButtonEl.classList.add('colab-df-spinner');
+          try {
+            const charts = await google.colab.kernel.invokeFunction(
+                'suggestCharts', [key], {});
+          } catch (error) {
+            console.error('Error during call to suggestCharts:', error);
+          }
+          quickchartButtonEl.classList.remove('colab-df-spinner');
+          quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+        }
+        (() => {
+          let quickchartButtonEl =
+            document.querySelector('#df-f0057b75-6966-4345-a02c-160ae4918c71 button');
+          quickchartButtonEl.style.display =
+            google.colab.kernel.accessAllowed ? 'block' : 'none';
+        })();
+      </script>
+    </div>
+
+  <div id="id_40f19a98-3e98-46a9-9981-a7e7b6bdd5fb">
+    <style>
+      .colab-df-generate {
+        background-color: #E8F0FE;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        display: none;
+        fill: #1967D2;
+        height: 32px;
+        padding: 0 0 0 0;
+        width: 32px;
+      }
+
+      .colab-df-generate:hover {
+        background-color: #E2EBFA;
+        box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+        fill: #174EA6;
+      }
+
+      [theme=dark] .colab-df-generate {
+        background-color: #3B4455;
+        fill: #D2E3FC;
+      }
+
+      [theme=dark] .colab-df-generate:hover {
+        background-color: #434B5C;
+        box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+        filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+        fill: #FFFFFF;
+      }
+    </style>
+    <button class="colab-df-generate" onclick="generateWithVariable('df')"
+            title="Generate code using this dataframe."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M7,19H8.4L18.45,9,17,7.55,7,17.6ZM5,21V16.75L18.45,3.32a2,2,0,0,1,2.83,0l1.4,1.43a1.91,1.91,0,0,1,.58,1.4,1.91,1.91,0,0,1-.58,1.4L9.25,21ZM18.45,9,17,7.55Zm-12,3A5.31,5.31,0,0,0,4.9,8.1,5.31,5.31,0,0,0,1,6.5,5.31,5.31,0,0,0,4.9,4.9,5.31,5.31,0,0,0,6.5,1,5.31,5.31,0,0,0,8.1,4.9,5.31,5.31,0,0,0,12,6.5,5.46,5.46,0,0,0,6.5,12Z"/>
+  </svg>
+    </button>
+    <script>
+      (() => {
+      const buttonEl =
+        document.querySelector('#id_40f19a98-3e98-46a9-9981-a7e7b6bdd5fb button.colab-df-generate');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      buttonEl.onclick = () => {
+        google.colab.notebook.generateWithVariable('df');
+      }
+      })();
+    </script>
+  </div>
+
+    </div>
+  </div>
+</div></div>
+</div>
+</section>
+<section id="link-keluar">
+<h2>Link Keluar<a class="headerlink" href="#link-keluar" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bs4</span><span class="w"> </span><span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">crawl_links_teknik</span><span class="p">(</span><span class="n">pages</span><span class="p">):</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">no</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="k">for</span> <span class="n">page</span> <span class="ow">in</span> <span class="n">pages</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">page</span><span class="p">)</span>
+            <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+            <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
+
+            <span class="c1"># Ambil semua link</span>
+            <span class="n">links</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">href</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">links</span><span class="p">:</span>
+                <span class="n">href</span> <span class="o">=</span> <span class="n">link</span><span class="p">[</span><span class="s1">&#39;href&#39;</span><span class="p">]</span>
+                <span class="n">teks</span> <span class="o">=</span> <span class="n">link</span><span class="o">.</span><span class="n">get_text</span><span class="p">(</span><span class="n">strip</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+                <span class="c1"># Filter hanya link keluar (mulai dengan http &amp; bukan link internal teknik.trunojoyo.ac.id)</span>
+                <span class="k">if</span> <span class="n">href</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;http&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="s2">&quot;teknik.trunojoyo.ac.id&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">href</span><span class="p">:</span>
+                    <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+                        <span class="s2">&quot;No&quot;</span><span class="p">:</span> <span class="n">no</span><span class="p">,</span>
+                        <span class="s2">&quot;Page&quot;</span><span class="p">:</span> <span class="n">page</span><span class="p">,</span>
+                        <span class="s2">&quot;Link Keluar&quot;</span><span class="p">:</span> <span class="n">href</span><span class="p">,</span>
+                        <span class="s2">&quot;Teks&quot;</span><span class="p">:</span> <span class="n">teks</span> <span class="k">if</span> <span class="n">teks</span> <span class="k">else</span> <span class="s2">&quot;-&quot;</span>
+                    <span class="p">})</span>
+                    <span class="n">no</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">RequestException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Gagal mengakses </span><span class="si">{</span><span class="n">page</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Buat DataFrame</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">🔗 Daftar Link Keluar Fakultas Teknik:&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+
+    <span class="c1"># Simpan hasil ke CSV</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;link_keluar_fakultas_teknik.csv&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8-sig&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">✅ Data link keluar berhasil disimpan ke link_keluar_fakultas_teknik.csv&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">df</span>
+
+
+<span class="c1"># Daftar halaman Fakultas Teknik yang ingin diambil link keluarnya</span>
+<span class="n">pages_to_crawl</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;https://teknik.trunojoyo.ac.id/&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;https://teknik.trunojoyo.ac.id/sekilas/&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;https://teknik.trunojoyo.ac.id/berita/&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;https://teknik.trunojoyo.ac.id/prodi/&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="c1"># Jalankan</span>
+<span class="n">crawl_links_teknik</span><span class="p">(</span><span class="n">pages_to_crawl</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Gagal mengakses https://teknik.trunojoyo.ac.id/berita/: 404 Client Error: Not Found for url: https://teknik.trunojoyo.ac.id/berita/
+Gagal mengakses https://teknik.trunojoyo.ac.id/prodi/: 404 Client Error: Not Found for url: https://teknik.trunojoyo.ac.id/prodi/
+
+🔗 Daftar Link Keluar Fakultas Teknik:
+ No                                    Page                                                                           Link Keluar                                    Teks
+  1         https://teknik.trunojoyo.ac.id/                                               https://fttrunojoyo.perpustakaan.co.id/                      Ruang Baca Digital
+  2         https://teknik.trunojoyo.ac.id/ https://drive.google.com/file/d/13vrMWMRLc51yaZPqJw_wBPAgRqiH0315/view?usp=drive_link                         Teknik Industri
+  3         https://teknik.trunojoyo.ac.id/   https://drive.google.com/file/d/1p0IjDah2BT7MSg4DPSarLJhbYSVP8lOx/view?usp=drivesdk                            Teknik Mesin
+  4         https://teknik.trunojoyo.ac.id/   https://drive.google.com/file/d/1xThmCp00FGmAWC0O4-j2mjnNtQJN0sAs/view?usp=drivesdk                      Teknik Informatika
+  5         https://teknik.trunojoyo.ac.id/   https://drive.google.com/file/d/1dv65FxClUVDwuKsfdsHH4b1oUXKFOVlB/view?usp=drivesdk                        Sistem Informasi
+  6         https://teknik.trunojoyo.ac.id/ https://drive.google.com/file/d/1_pmcEum54gkq6vjk9b-iaKY-ZXBhDHn-/view?usp=drive_link                          Teknik Elektro
+  7         https://teknik.trunojoyo.ac.id/   https://drive.google.com/file/d/1Q5Tka6Bf6YmhtSeu076q0Ra59EBkgGJE/view?usp=drivesdk                      Teknik Mekatronika
+  8         https://teknik.trunojoyo.ac.id/                https://drive.google.com/file/d/1tapXtJzCC-JanwS2-voGJ9D8fWAI90wD/view               Panduan Penulisan Skripsi
+  9         https://teknik.trunojoyo.ac.id/                https://drive.google.com/file/d/1z2C6jLcRvjd8hZldgq3x6HfO3smiUqd0/view Panduan Penulisan Laporan Kerja Praktek
+ 10         https://teknik.trunojoyo.ac.id/                https://drive.google.com/file/d/1bnBaqS95PjhO4PFwhml6DHNYnTzwONp7/view                            Panduan MBKM
+ 11         https://teknik.trunojoyo.ac.id/                https://drive.google.com/file/d/1MAx_-DkOkhIzV6Jcokh-16vitnIzWKrZ/view                           Panduan Sisri
+ 12         https://teknik.trunojoyo.ac.id/                                                                https://s.id/ydsft_utm                      Daftar Yudisium FT
+ 13         https://teknik.trunojoyo.ac.id/                                                    https://bemft.trunojoyo.ac.id/?m=1                                     BEM
+ 14         https://teknik.trunojoyo.ac.id/                                                         http://dpmft.trunojoyo.ac.id/                                  DPM FT
+ 15         https://teknik.trunojoyo.ac.id/                                                   https://himasi.trunojoyo.ac.id/?m=1                                  Himasi
+ 16         https://teknik.trunojoyo.ac.id/                                                   http://himatif.trunojoyo.ac.id/?m=1                                 Himatif
+ 17         https://teknik.trunojoyo.ac.id/                                                          http://hmti.trunojoyo.ac.id/                                    HMTI
+ 18         https://teknik.trunojoyo.ac.id/                                                        http://hmm-ft.trunojoyo.ac.id/                                     HMM
+ 19         https://teknik.trunojoyo.ac.id/                                                       http://himatro.trunojoyo.ac.id/                                 Himatro
+ 20         https://teknik.trunojoyo.ac.id/                                                     https://himameka.trunojoyo.ac.id/                                Himameka
+ 21         https://teknik.trunojoyo.ac.id/                                                       http://kamusft.trunojoyo.ac.id/                                Kamus FT
+ 22         https://teknik.trunojoyo.ac.id/                                                        https://tofatek.wordpress.com/                                 Tofatek
+ 23         https://teknik.trunojoyo.ac.id/                                                         http://soket.trunojoyo.ac.id/                                   Soket
+ 24         https://teknik.trunojoyo.ac.id/                                                         http://www.bluemurder.nix.id/                             Blue Murder
+ 25         https://teknik.trunojoyo.ac.id/                                                    http://ukmfteecom.trunojoyo.ac.id/                                   EECOM
+ 26         https://teknik.trunojoyo.ac.id/                           https://instagram.com/ukmft_inovasi?igshid=YTQwZjQ0NmI0OA==                                 Inovasi
+ 27         https://teknik.trunojoyo.ac.id/                                                   https://forms.gle/ppt8GaM68FP15XDZ7   Kuisioner Pelaksanaan Good Governance
+ 28         https://teknik.trunojoyo.ac.id/                                                   https://forms.gle/tiuNL46SEDSwisUx8              Survey Kepuasan Layanan FT
+ 29         https://teknik.trunojoyo.ac.id/                                                   https://forms.gle/KhxRqjckV4tQ9UWRA            Survey Pemahaman Visi &amp; Misi
+ 30         https://teknik.trunojoyo.ac.id/                https://drive.google.com/file/d/1WRVnrFu8sazFU3kTxf2mzmDWjwKJA0wi/view                Rencana Induk Penelitian
+ 31         https://teknik.trunojoyo.ac.id/                https://drive.google.com/file/d/13TbpU9hyXd-1GoeNhijQ15R9CEtzj6Mf/view                Rencana Induk Pengabdian
+ 32         https://teknik.trunojoyo.ac.id/                                                         https://ppid.trunojoyo.ac.id/                                    PPID
+ 33         https://teknik.trunojoyo.ac.id/                                               https://fttrunojoyo.perpustakaan.co.id/                      Ruang Baca Digital
+ 34         https://teknik.trunojoyo.ac.id/ https://drive.google.com/file/d/13vrMWMRLc51yaZPqJw_wBPAgRqiH0315/view?usp=drive_link                         Teknik Industri
+ 35         https://teknik.trunojoyo.ac.id/   https://drive.google.com/file/d/1p0IjDah2BT7MSg4DPSarLJhbYSVP8lOx/view?usp=drivesdk                            Teknik Mesin
+ 36         https://teknik.trunojoyo.ac.id/   https://drive.google.com/file/d/1xThmCp00FGmAWC0O4-j2mjnNtQJN0sAs/view?usp=drivesdk                      Teknik Informatika
+ 37         https://teknik.trunojoyo.ac.id/   https://drive.google.com/file/d/1dv65FxClUVDwuKsfdsHH4b1oUXKFOVlB/view?usp=drivesdk                        Sistem Informasi
+ 38         https://teknik.trunojoyo.ac.id/ https://drive.google.com/file/d/1_pmcEum54gkq6vjk9b-iaKY-ZXBhDHn-/view?usp=drive_link                          Teknik Elektro
+ 39         https://teknik.trunojoyo.ac.id/   https://drive.google.com/file/d/1Q5Tka6Bf6YmhtSeu076q0Ra59EBkgGJE/view?usp=drivesdk                      Teknik Mekatronika
+ 40         https://teknik.trunojoyo.ac.id/                https://drive.google.com/file/d/1tapXtJzCC-JanwS2-voGJ9D8fWAI90wD/view               Panduan Penulisan Skripsi
+ 41         https://teknik.trunojoyo.ac.id/                https://drive.google.com/file/d/1z2C6jLcRvjd8hZldgq3x6HfO3smiUqd0/view Panduan Penulisan Laporan Kerja Praktek
+ 42         https://teknik.trunojoyo.ac.id/                https://drive.google.com/file/d/1bnBaqS95PjhO4PFwhml6DHNYnTzwONp7/view                            Panduan MBKM
+ 43         https://teknik.trunojoyo.ac.id/                https://drive.google.com/file/d/1MAx_-DkOkhIzV6Jcokh-16vitnIzWKrZ/view                           Panduan Sisri
+ 44         https://teknik.trunojoyo.ac.id/                                                                https://s.id/ydsft_utm                      Daftar Yudisium FT
+ 45         https://teknik.trunojoyo.ac.id/                                                    https://bemft.trunojoyo.ac.id/?m=1                                     BEM
+ 46         https://teknik.trunojoyo.ac.id/                                                         http://dpmft.trunojoyo.ac.id/                                  DPM FT
+ 47         https://teknik.trunojoyo.ac.id/                                                   https://himasi.trunojoyo.ac.id/?m=1                                  Himasi
+ 48         https://teknik.trunojoyo.ac.id/                                                   http://himatif.trunojoyo.ac.id/?m=1                                 Himatif
+ 49         https://teknik.trunojoyo.ac.id/                                                          http://hmti.trunojoyo.ac.id/                                    HMTI
+ 50         https://teknik.trunojoyo.ac.id/                                                        http://hmm-ft.trunojoyo.ac.id/                                     HMM
+ 51         https://teknik.trunojoyo.ac.id/                                                       http://himatro.trunojoyo.ac.id/                                 Himatro
+ 52         https://teknik.trunojoyo.ac.id/                                                     https://himameka.trunojoyo.ac.id/                                Himameka
+ 53         https://teknik.trunojoyo.ac.id/                                                       http://kamusft.trunojoyo.ac.id/                                Kamus FT
+ 54         https://teknik.trunojoyo.ac.id/                                                        https://tofatek.wordpress.com/                                 Tofatek
+ 55         https://teknik.trunojoyo.ac.id/                                                         http://soket.trunojoyo.ac.id/                                   Soket
+ 56         https://teknik.trunojoyo.ac.id/                                                         http://www.bluemurder.nix.id/                             Blue Murder
+ 57         https://teknik.trunojoyo.ac.id/                                                    http://ukmfteecom.trunojoyo.ac.id/                                   EECOM
+ 58         https://teknik.trunojoyo.ac.id/                           https://instagram.com/ukmft_inovasi?igshid=YTQwZjQ0NmI0OA==                                 Inovasi
+ 59         https://teknik.trunojoyo.ac.id/                                                   https://forms.gle/ppt8GaM68FP15XDZ7   Kuisioner Pelaksanaan Good Governance
+ 60         https://teknik.trunojoyo.ac.id/                                                   https://forms.gle/tiuNL46SEDSwisUx8              Survey Kepuasan Layanan FT
+ 61         https://teknik.trunojoyo.ac.id/                                                   https://forms.gle/KhxRqjckV4tQ9UWRA            Survey Pemahaman Visi &amp; Misi
+ 62         https://teknik.trunojoyo.ac.id/                https://drive.google.com/file/d/1WRVnrFu8sazFU3kTxf2mzmDWjwKJA0wi/view                Rencana Induk Penelitian
+ 63         https://teknik.trunojoyo.ac.id/                https://drive.google.com/file/d/13TbpU9hyXd-1GoeNhijQ15R9CEtzj6Mf/view                Rencana Induk Pengabdian
+ 64         https://teknik.trunojoyo.ac.id/                                                         https://ppid.trunojoyo.ac.id/                                    PPID
+ 65         https://teknik.trunojoyo.ac.id/                                            https://www.youtube.com/@FAKULTASTEKNIKUTM                                       -
+ 66         https://teknik.trunojoyo.ac.id/                                              https://www.instagram.com/ftutm.official                                       -
+ 67         https://teknik.trunojoyo.ac.id/                                               https://fttrunojoyo.perpustakaan.co.id/                      Ruang Baca Digital
+ 68         https://teknik.trunojoyo.ac.id/                                                   https://forms.gle/KhxRqjckV4tQ9UWRA              Survey Pemahaman Visi Misi
+ 69 https://teknik.trunojoyo.ac.id/sekilas/                                               https://fttrunojoyo.perpustakaan.co.id/                      Ruang Baca Digital
+ 70 https://teknik.trunojoyo.ac.id/sekilas/ https://drive.google.com/file/d/13vrMWMRLc51yaZPqJw_wBPAgRqiH0315/view?usp=drive_link                         Teknik Industri
+ 71 https://teknik.trunojoyo.ac.id/sekilas/   https://drive.google.com/file/d/1p0IjDah2BT7MSg4DPSarLJhbYSVP8lOx/view?usp=drivesdk                            Teknik Mesin
+ 72 https://teknik.trunojoyo.ac.id/sekilas/   https://drive.google.com/file/d/1xThmCp00FGmAWC0O4-j2mjnNtQJN0sAs/view?usp=drivesdk                      Teknik Informatika
+ 73 https://teknik.trunojoyo.ac.id/sekilas/   https://drive.google.com/file/d/1dv65FxClUVDwuKsfdsHH4b1oUXKFOVlB/view?usp=drivesdk                        Sistem Informasi
+ 74 https://teknik.trunojoyo.ac.id/sekilas/ https://drive.google.com/file/d/1_pmcEum54gkq6vjk9b-iaKY-ZXBhDHn-/view?usp=drive_link                          Teknik Elektro
+ 75 https://teknik.trunojoyo.ac.id/sekilas/   https://drive.google.com/file/d/1Q5Tka6Bf6YmhtSeu076q0Ra59EBkgGJE/view?usp=drivesdk                      Teknik Mekatronika
+ 76 https://teknik.trunojoyo.ac.id/sekilas/                https://drive.google.com/file/d/1tapXtJzCC-JanwS2-voGJ9D8fWAI90wD/view               Panduan Penulisan Skripsi
+ 77 https://teknik.trunojoyo.ac.id/sekilas/                https://drive.google.com/file/d/1z2C6jLcRvjd8hZldgq3x6HfO3smiUqd0/view Panduan Penulisan Laporan Kerja Praktek
+ 78 https://teknik.trunojoyo.ac.id/sekilas/                https://drive.google.com/file/d/1bnBaqS95PjhO4PFwhml6DHNYnTzwONp7/view                            Panduan MBKM
+ 79 https://teknik.trunojoyo.ac.id/sekilas/                https://drive.google.com/file/d/1MAx_-DkOkhIzV6Jcokh-16vitnIzWKrZ/view                           Panduan Sisri
+ 80 https://teknik.trunojoyo.ac.id/sekilas/                                                                https://s.id/ydsft_utm                      Daftar Yudisium FT
+ 81 https://teknik.trunojoyo.ac.id/sekilas/                                                    https://bemft.trunojoyo.ac.id/?m=1                                     BEM
+ 82 https://teknik.trunojoyo.ac.id/sekilas/                                                         http://dpmft.trunojoyo.ac.id/                                  DPM FT
+ 83 https://teknik.trunojoyo.ac.id/sekilas/                                                   https://himasi.trunojoyo.ac.id/?m=1                                  Himasi
+ 84 https://teknik.trunojoyo.ac.id/sekilas/                                                   http://himatif.trunojoyo.ac.id/?m=1                                 Himatif
+ 85 https://teknik.trunojoyo.ac.id/sekilas/                                                          http://hmti.trunojoyo.ac.id/                                    HMTI
+ 86 https://teknik.trunojoyo.ac.id/sekilas/                                                        http://hmm-ft.trunojoyo.ac.id/                                     HMM
+ 87 https://teknik.trunojoyo.ac.id/sekilas/                                                       http://himatro.trunojoyo.ac.id/                                 Himatro
+ 88 https://teknik.trunojoyo.ac.id/sekilas/                                                     https://himameka.trunojoyo.ac.id/                                Himameka
+ 89 https://teknik.trunojoyo.ac.id/sekilas/                                                       http://kamusft.trunojoyo.ac.id/                                Kamus FT
+ 90 https://teknik.trunojoyo.ac.id/sekilas/                                                        https://tofatek.wordpress.com/                                 Tofatek
+ 91 https://teknik.trunojoyo.ac.id/sekilas/                                                         http://soket.trunojoyo.ac.id/                                   Soket
+ 92 https://teknik.trunojoyo.ac.id/sekilas/                                                         http://www.bluemurder.nix.id/                             Blue Murder
+ 93 https://teknik.trunojoyo.ac.id/sekilas/                                                    http://ukmfteecom.trunojoyo.ac.id/                                   EECOM
+ 94 https://teknik.trunojoyo.ac.id/sekilas/                           https://instagram.com/ukmft_inovasi?igshid=YTQwZjQ0NmI0OA==                                 Inovasi
+ 95 https://teknik.trunojoyo.ac.id/sekilas/                                                   https://forms.gle/ppt8GaM68FP15XDZ7   Kuisioner Pelaksanaan Good Governance
+ 96 https://teknik.trunojoyo.ac.id/sekilas/                                                   https://forms.gle/tiuNL46SEDSwisUx8              Survey Kepuasan Layanan FT
+ 97 https://teknik.trunojoyo.ac.id/sekilas/                                                   https://forms.gle/KhxRqjckV4tQ9UWRA            Survey Pemahaman Visi &amp; Misi
+ 98 https://teknik.trunojoyo.ac.id/sekilas/                https://drive.google.com/file/d/1WRVnrFu8sazFU3kTxf2mzmDWjwKJA0wi/view                Rencana Induk Penelitian
+ 99 https://teknik.trunojoyo.ac.id/sekilas/                https://drive.google.com/file/d/13TbpU9hyXd-1GoeNhijQ15R9CEtzj6Mf/view                Rencana Induk Pengabdian
+100 https://teknik.trunojoyo.ac.id/sekilas/                                                         https://ppid.trunojoyo.ac.id/                                    PPID
+101 https://teknik.trunojoyo.ac.id/sekilas/                                               https://fttrunojoyo.perpustakaan.co.id/                      Ruang Baca Digital
+102 https://teknik.trunojoyo.ac.id/sekilas/ https://drive.google.com/file/d/13vrMWMRLc51yaZPqJw_wBPAgRqiH0315/view?usp=drive_link                         Teknik Industri
+103 https://teknik.trunojoyo.ac.id/sekilas/   https://drive.google.com/file/d/1p0IjDah2BT7MSg4DPSarLJhbYSVP8lOx/view?usp=drivesdk                            Teknik Mesin
+104 https://teknik.trunojoyo.ac.id/sekilas/   https://drive.google.com/file/d/1xThmCp00FGmAWC0O4-j2mjnNtQJN0sAs/view?usp=drivesdk                      Teknik Informatika
+105 https://teknik.trunojoyo.ac.id/sekilas/   https://drive.google.com/file/d/1dv65FxClUVDwuKsfdsHH4b1oUXKFOVlB/view?usp=drivesdk                        Sistem Informasi
+106 https://teknik.trunojoyo.ac.id/sekilas/ https://drive.google.com/file/d/1_pmcEum54gkq6vjk9b-iaKY-ZXBhDHn-/view?usp=drive_link                          Teknik Elektro
+107 https://teknik.trunojoyo.ac.id/sekilas/   https://drive.google.com/file/d/1Q5Tka6Bf6YmhtSeu076q0Ra59EBkgGJE/view?usp=drivesdk                      Teknik Mekatronika
+108 https://teknik.trunojoyo.ac.id/sekilas/                https://drive.google.com/file/d/1tapXtJzCC-JanwS2-voGJ9D8fWAI90wD/view               Panduan Penulisan Skripsi
+109 https://teknik.trunojoyo.ac.id/sekilas/                https://drive.google.com/file/d/1z2C6jLcRvjd8hZldgq3x6HfO3smiUqd0/view Panduan Penulisan Laporan Kerja Praktek
+110 https://teknik.trunojoyo.ac.id/sekilas/                https://drive.google.com/file/d/1bnBaqS95PjhO4PFwhml6DHNYnTzwONp7/view                            Panduan MBKM
+111 https://teknik.trunojoyo.ac.id/sekilas/                https://drive.google.com/file/d/1MAx_-DkOkhIzV6Jcokh-16vitnIzWKrZ/view                           Panduan Sisri
+112 https://teknik.trunojoyo.ac.id/sekilas/                                                                https://s.id/ydsft_utm                      Daftar Yudisium FT
+113 https://teknik.trunojoyo.ac.id/sekilas/                                                    https://bemft.trunojoyo.ac.id/?m=1                                     BEM
+114 https://teknik.trunojoyo.ac.id/sekilas/                                                         http://dpmft.trunojoyo.ac.id/                                  DPM FT
+115 https://teknik.trunojoyo.ac.id/sekilas/                                                   https://himasi.trunojoyo.ac.id/?m=1                                  Himasi
+116 https://teknik.trunojoyo.ac.id/sekilas/                                                   http://himatif.trunojoyo.ac.id/?m=1                                 Himatif
+117 https://teknik.trunojoyo.ac.id/sekilas/                                                          http://hmti.trunojoyo.ac.id/                                    HMTI
+118 https://teknik.trunojoyo.ac.id/sekilas/                                                        http://hmm-ft.trunojoyo.ac.id/                                     HMM
+119 https://teknik.trunojoyo.ac.id/sekilas/                                                       http://himatro.trunojoyo.ac.id/                                 Himatro
+120 https://teknik.trunojoyo.ac.id/sekilas/                                                     https://himameka.trunojoyo.ac.id/                                Himameka
+121 https://teknik.trunojoyo.ac.id/sekilas/                                                       http://kamusft.trunojoyo.ac.id/                                Kamus FT
+122 https://teknik.trunojoyo.ac.id/sekilas/                                                        https://tofatek.wordpress.com/                                 Tofatek
+123 https://teknik.trunojoyo.ac.id/sekilas/                                                         http://soket.trunojoyo.ac.id/                                   Soket
+124 https://teknik.trunojoyo.ac.id/sekilas/                                                         http://www.bluemurder.nix.id/                             Blue Murder
+125 https://teknik.trunojoyo.ac.id/sekilas/                                                    http://ukmfteecom.trunojoyo.ac.id/                                   EECOM
+126 https://teknik.trunojoyo.ac.id/sekilas/                           https://instagram.com/ukmft_inovasi?igshid=YTQwZjQ0NmI0OA==                                 Inovasi
+127 https://teknik.trunojoyo.ac.id/sekilas/                                                   https://forms.gle/ppt8GaM68FP15XDZ7   Kuisioner Pelaksanaan Good Governance
+128 https://teknik.trunojoyo.ac.id/sekilas/                                                   https://forms.gle/tiuNL46SEDSwisUx8              Survey Kepuasan Layanan FT
+129 https://teknik.trunojoyo.ac.id/sekilas/                                                   https://forms.gle/KhxRqjckV4tQ9UWRA            Survey Pemahaman Visi &amp; Misi
+130 https://teknik.trunojoyo.ac.id/sekilas/                https://drive.google.com/file/d/1WRVnrFu8sazFU3kTxf2mzmDWjwKJA0wi/view                Rencana Induk Penelitian
+131 https://teknik.trunojoyo.ac.id/sekilas/                https://drive.google.com/file/d/13TbpU9hyXd-1GoeNhijQ15R9CEtzj6Mf/view                Rencana Induk Pengabdian
+132 https://teknik.trunojoyo.ac.id/sekilas/                                                         https://ppid.trunojoyo.ac.id/                                    PPID
+
+✅ Data link keluar berhasil disimpan ke link_keluar_fakultas_teknik.csv
+</pre></div>
+</div>
+<div class="output text_html">
+  <div id="df-a2071fd5-e88f-48e8-ac60-81f74b577184" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>No</th>
+      <th>Page</th>
+      <th>Link Keluar</th>
+      <th>Teks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>https://teknik.trunojoyo.ac.id/</td>
+      <td>https://fttrunojoyo.perpustakaan.co.id/</td>
+      <td>Ruang Baca Digital</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>https://teknik.trunojoyo.ac.id/</td>
+      <td>https://drive.google.com/file/d/13vrMWMRLc51ya...</td>
+      <td>Teknik Industri</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>https://teknik.trunojoyo.ac.id/</td>
+      <td>https://drive.google.com/file/d/1p0IjDah2BT7MS...</td>
+      <td>Teknik Mesin</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>https://teknik.trunojoyo.ac.id/</td>
+      <td>https://drive.google.com/file/d/1xThmCp00FGmAW...</td>
+      <td>Teknik Informatika</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>https://teknik.trunojoyo.ac.id/</td>
+      <td>https://drive.google.com/file/d/1dv65FxClUVDwu...</td>
+      <td>Sistem Informasi</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>127</th>
+      <td>128</td>
+      <td>https://teknik.trunojoyo.ac.id/sekilas/</td>
+      <td>https://forms.gle/tiuNL46SEDSwisUx8</td>
+      <td>Survey Kepuasan Layanan FT</td>
+    </tr>
+    <tr>
+      <th>128</th>
+      <td>129</td>
+      <td>https://teknik.trunojoyo.ac.id/sekilas/</td>
+      <td>https://forms.gle/KhxRqjckV4tQ9UWRA</td>
+      <td>Survey Pemahaman Visi &amp; Misi</td>
+    </tr>
+    <tr>
+      <th>129</th>
+      <td>130</td>
+      <td>https://teknik.trunojoyo.ac.id/sekilas/</td>
+      <td>https://drive.google.com/file/d/1WRVnrFu8sazFU...</td>
+      <td>Rencana Induk Penelitian</td>
+    </tr>
+    <tr>
+      <th>130</th>
+      <td>131</td>
+      <td>https://teknik.trunojoyo.ac.id/sekilas/</td>
+      <td>https://drive.google.com/file/d/13TbpU9hyXd-1G...</td>
+      <td>Rencana Induk Pengabdian</td>
+    </tr>
+    <tr>
+      <th>131</th>
+      <td>132</td>
+      <td>https://teknik.trunojoyo.ac.id/sekilas/</td>
+      <td>https://ppid.trunojoyo.ac.id/</td>
+      <td>PPID</td>
+    </tr>
+  </tbody>
+</table>
+<p>132 rows × 4 columns</p>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-a2071fd5-e88f-48e8-ac60-81f74b577184')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-a2071fd5-e88f-48e8-ac60-81f74b577184 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-a2071fd5-e88f-48e8-ac60-81f74b577184');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+    <div id="df-b5f009ee-a024-470d-b6ef-d6c0f084e771">
+      <button class="colab-df-quickchart" onclick="quickchart('df-b5f009ee-a024-470d-b6ef-d6c0f084e771')"
+                title="Suggest charts"
+                style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+     width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+    </g>
+</svg>
+      </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+      <script>
+        async function quickchart(key) {
+          const quickchartButtonEl =
+            document.querySelector('#' + key + ' button');
+          quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+          quickchartButtonEl.classList.add('colab-df-spinner');
+          try {
+            const charts = await google.colab.kernel.invokeFunction(
+                'suggestCharts', [key], {});
+          } catch (error) {
+            console.error('Error during call to suggestCharts:', error);
+          }
+          quickchartButtonEl.classList.remove('colab-df-spinner');
+          quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+        }
+        (() => {
+          let quickchartButtonEl =
+            document.querySelector('#df-b5f009ee-a024-470d-b6ef-d6c0f084e771 button');
+          quickchartButtonEl.style.display =
+            google.colab.kernel.accessAllowed ? 'block' : 'none';
+        })();
+      </script>
+    </div>
+
+    </div>
+  </div>
+</div></div>
+</div>
+</section>
+<section id="penghapusan-kata-umum">
+<h2>Penghapusan Kata umum<a class="headerlink" href="#penghapusan-kata-umum" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">nltk</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">nltk.corpus</span><span class="w"> </span><span class="kn">import</span> <span class="n">stopwords</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+
+<span class="c1"># --- 1. Download stopwords bahasa Indonesia (kalau belum) ---</span>
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;stopwords&#39;</span><span class="p">)</span>
+
+<span class="c1"># --- 2. Tentukan path file ---</span>
+<span class="n">file_path</span> <span class="o">=</span> <span class="s2">&quot;/content/drive/MyDrive/PPW/pta_fatek_3halaman.csv&quot;</span>  <span class="c1"># sesuaikan jika file ada di folder lain</span>
+
+<span class="c1"># --- 3. Cek apakah file tersedia ---</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">file_path</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;❌ File &#39;</span><span class="si">{</span><span class="n">file_path</span><span class="si">}</span><span class="s2">&#39; tidak ditemukan.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pastikan file sudah diupload atau pathnya benar.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="c1"># --- 4. Baca dataset ---</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✅ File ditemukan! Total entri: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># --- 5. Ambil kolom penting ---</span>
+    <span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="n">col</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;judul&#39;</span><span class="p">,</span> <span class="s1">&#39;prodi&#39;</span><span class="p">,</span> <span class="s1">&#39;abstrak&#39;</span><span class="p">]):</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;judul&#39;</span><span class="p">,</span> <span class="s1">&#39;prodi&#39;</span><span class="p">,</span> <span class="s1">&#39;abstrak&#39;</span><span class="p">]]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;⚠️ Kolom &#39;judul&#39;, &#39;prodi&#39;, atau &#39;abstrak&#39; tidak ditemukan dalam file CSV.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># --- 6. Ambil stopwords bahasa Indonesia ---</span>
+    <span class="n">stop_words</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s1">&#39;indonesian&#39;</span><span class="p">))</span>
+
+    <span class="c1"># --- 7. Fungsi untuk hapus stopwords ---</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">remove_stopwords</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">isna</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+            <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+        <span class="n">words</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+        <span class="n">filtered</span> <span class="o">=</span> <span class="p">[</span><span class="n">w</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">words</span> <span class="k">if</span> <span class="n">w</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">stop_words</span><span class="p">]</span>
+        <span class="k">return</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">filtered</span><span class="p">)</span>
+
+    <span class="c1"># --- 8. Terapkan ke kolom abstrak ---</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;abstrak_no_stopwords&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;abstrak&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">remove_stopwords</span><span class="p">)</span>
+
+    <span class="c1"># --- 9. Simpan hasil ke file baru ---</span>
+    <span class="n">output_file</span> <span class="o">=</span> <span class="s2">&quot;pta_fatek_no_stopwords.csv&quot;</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">output_file</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8-sig&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;📁 Stopword removal selesai. Hasil disimpan ke: </span><span class="si">{</span><span class="n">output_file</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># --- 10. Tampilkan contoh hasil ---</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;abstrak&#39;</span><span class="p">,</span> <span class="s1">&#39;abstrak_no_stopwords&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>✅ File ditemukan! Total entri: 135
+📁 Stopword removal selesai. Hasil disimpan ke: pta_fatek_no_stopwords.csv
+                                             abstrak  \
+0  Sistem  informasi  akademik  (SIAKAD) merupaka...   
+1  Berjalannya koneksi jaringan komputer dengan l...   
+2  Web server adalah sebuah perangkat lunak serve...   
+3  Penjadwalan  kuliah  di  Perguruan  Tinggi  me...   
+4  Seiring perkembangan teknologi yang ada diduni...   
+5  Gerak pekerja ada pada game yang memiliki genr...   
+6  Perkembangan game yang semakin pesat, memberik...   
+7  Sistem pengenalan wajah adalah suatu sistem un...   
+8  Teknologi mobile game beroperating system open...   
+9  Kantor Badan Kepegawaian kota Bangkalan adalah...   
+
+                                abstrak_no_stopwords  
+0  sistem informasi akademik (siakad) sistem info...  
+1  berjalannya koneksi jaringan komputer lancar g...  
+2  web server perangkat lunak server berfungsi me...  
+3  penjadwalan kuliah perguruan kompleks. permasa...  
+4  seiring perkembangan teknologi didunia, muncul...  
+5  gerak pekerja game memiliki genre rts (real-ti...  
+6  perkembangan game pesat, alternative peminatny...  
+7  sistem pengenalan wajah sistem mengenali ident...  
+8  teknologi mobile game beroperating system open...  
+9  kantor badan kepegawaian kota bangkalan instan...  
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data] Downloading package stopwords to /root/nltk_data...
+[nltk_data]   Package stopwords is already up-to-date!
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="menghilangkan-simbol-tanda-baca">
+<h2>Menghilangkan simbol tanda baca<a class="headerlink" href="#menghilangkan-simbol-tanda-baca" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">nltk</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">nltk.corpus</span><span class="w"> </span><span class="kn">import</span> <span class="n">stopwords</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span>  <span class="c1"># &lt;--- penting untuk hapus tanda baca</span>
+
+<span class="c1"># --- 1. Download stopwords bahasa Indonesia (kalau belum) ---</span>
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;stopwords&#39;</span><span class="p">)</span>
+
+<span class="c1"># --- 2. Tentukan path file ---</span>
+<span class="n">file_path</span> <span class="o">=</span> <span class="s2">&quot;/content/drive/MyDrive/PPW/pta_fatek_3halaman.csv&quot;</span>  <span class="c1"># sesuaikan jika file ada di folder lain</span>
+
+<span class="c1"># --- 3. Cek apakah file tersedia ---</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">file_path</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;❌ File &#39;</span><span class="si">{</span><span class="n">file_path</span><span class="si">}</span><span class="s2">&#39; tidak ditemukan.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="c1"># --- 4. Baca dataset ---</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✅ File ditemukan! Total entri: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># --- 5. Pastikan kolom tersedia ---</span>
+    <span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="n">col</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;judul&#39;</span><span class="p">,</span> <span class="s1">&#39;prodi&#39;</span><span class="p">,</span> <span class="s1">&#39;abstrak&#39;</span><span class="p">]):</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;judul&#39;</span><span class="p">,</span> <span class="s1">&#39;prodi&#39;</span><span class="p">,</span> <span class="s1">&#39;abstrak&#39;</span><span class="p">]]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;⚠️ Kolom &#39;judul&#39;, &#39;prodi&#39;, atau &#39;abstrak&#39; tidak ditemukan dalam file CSV.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># --- 6. Ambil stopwords bahasa Indonesia ---</span>
+    <span class="n">stop_words</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s1">&#39;indonesian&#39;</span><span class="p">))</span>
+
+    <span class="c1"># --- 7. Fungsi hapus tanda baca ---</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">remove_punctuation</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">isna</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+            <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+        <span class="c1"># Hapus semua karakter non huruf dan spasi</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[^a-zA-Z0-9\s]&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">text</span>
+
+    <span class="c1"># --- 8. Fungsi hapus stopwords ---</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">remove_stopwords</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+        <span class="n">words</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+        <span class="n">filtered</span> <span class="o">=</span> <span class="p">[</span><span class="n">w</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">words</span> <span class="k">if</span> <span class="n">w</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">stop_words</span><span class="p">]</span>
+        <span class="k">return</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">filtered</span><span class="p">)</span>
+
+    <span class="c1"># --- 9. Bersihkan tanda baca dulu ---</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;abstrak_clean&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;abstrak&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">remove_punctuation</span><span class="p">)</span>
+
+    <span class="c1"># --- 10. Lalu hapus stopwords ---</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;abstrak_no_stopwords&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;abstrak_clean&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">remove_stopwords</span><span class="p">)</span>
+
+    <span class="c1"># --- 11. Simpan hasil ---</span>
+    <span class="n">output_file</span> <span class="o">=</span> <span class="s2">&quot;pta_fatek_clean.csv&quot;</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">output_file</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8-sig&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;🧹 Pembersihan selesai! File disimpan sebagai: </span><span class="si">{</span><span class="n">output_file</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># --- 12. Tampilkan contoh hasil ---</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;abstrak&#39;</span><span class="p">,</span> <span class="s1">&#39;abstrak_clean&#39;</span><span class="p">,</span> <span class="s1">&#39;abstrak_no_stopwords&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>✅ File ditemukan! Total entri: 135
+🧹 Pembersihan selesai! File disimpan sebagai: pta_fatek_clean.csv
+                                             abstrak  \
+0  Sistem  informasi  akademik  (SIAKAD) merupaka...   
+1  Berjalannya koneksi jaringan komputer dengan l...   
+2  Web server adalah sebuah perangkat lunak serve...   
+3  Penjadwalan  kuliah  di  Perguruan  Tinggi  me...   
+4  Seiring perkembangan teknologi yang ada diduni...   
+5  Gerak pekerja ada pada game yang memiliki genr...   
+6  Perkembangan game yang semakin pesat, memberik...   
+7  Sistem pengenalan wajah adalah suatu sistem un...   
+8  Teknologi mobile game beroperating system open...   
+9  Kantor Badan Kepegawaian kota Bangkalan adalah...   
+
+                                       abstrak_clean  \
+0  Sistem  informasi  akademik  SIAKAD merupakan ...   
+1  Berjalannya koneksi jaringan komputer dengan l...   
+2  Web server adalah sebuah perangkat lunak serve...   
+3  Penjadwalan  kuliah  di  Perguruan  Tinggi  me...   
+4  Seiring perkembangan teknologi yang ada diduni...   
+5  Gerak pekerja ada pada game yang memiliki genr...   
+6  Perkembangan game yang semakin pesat memberika...   
+7  Sistem pengenalan wajah adalah suatu sistem un...   
+8  Teknologi mobile game beroperating system open...   
+9  Kantor Badan Kepegawaian kota Bangkalan adalah...   
+
+                                abstrak_no_stopwords  
+0  sistem informasi akademik siakad sistem inform...  
+1  berjalannya koneksi jaringan komputer lancar g...  
+2  web server perangkat lunak server berfungsi me...  
+3  penjadwalan kuliah perguruan kompleks permasal...  
+4  seiring perkembangan teknologi didunia muncul ...  
+5  gerak pekerja game memiliki genre rts realtime...  
+6  perkembangan game pesat alternative peminatnya...  
+7  sistem pengenalan wajah sistem mengenali ident...  
+8  teknologi mobile game beroperating system open...  
+9  kantor badan kepegawaian kota bangkalan instan...  
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data] Downloading package stopwords to /root/nltk_data...
+[nltk_data]   Package stopwords is already up-to-date!
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="cek-ejaan-pembakuan-kata">
+<h2>Cek ejaan pembakuan kata<a class="headerlink" href="#cek-ejaan-pembakuan-kata" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>sastrawi<span class="w"> </span>pyspellchecker
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting sastrawi
+  Downloading Sastrawi-1.0.1-py2.py3-none-any.whl.metadata (909 bytes)
+Collecting pyspellchecker
+  Downloading pyspellchecker-0.8.3-py3-none-any.whl.metadata (9.5 kB)
+Downloading Sastrawi-1.0.1-py2.py3-none-any.whl (209 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">209.7/209.7 kB</span> <span class=" -Color -Color-Red">4.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hDownloading pyspellchecker-0.8.3-py3-none-any.whl (7.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">7.2/7.2 MB</span> <span class=" -Color -Color-Red">64.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hInstalling collected packages: sastrawi, pyspellchecker
+Successfully installed pyspellchecker-0.8.3 sastrawi-1.0.1
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="stemming-dan-lematisasi">
+<h2>stemming dan lematisasi<a class="headerlink" href="#stemming-dan-lematisasi" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. Install library</span>
+<span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>Sastrawi
+
+<span class="c1"># 2. Import</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">Sastrawi.Stemmer.StemmerFactory</span><span class="w"> </span><span class="kn">import</span> <span class="n">StemmerFactory</span>
+
+<span class="c1"># 3. Buat stemmer</span>
+<span class="n">factory</span> <span class="o">=</span> <span class="n">StemmerFactory</span><span class="p">()</span>
+<span class="n">stemmer</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="n">create_stemmer</span><span class="p">()</span>
+
+<span class="c1"># 4. Baca dataset</span>
+<span class="n">file_path</span> <span class="o">=</span> <span class="s2">&quot;/content/drive/MyDrive/PPW/pta_fatek_3halaman.csv&quot;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+
+<span class="c1"># 5. Ambil kolom abstrak</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;judul&#39;</span><span class="p">,</span> <span class="s1">&#39;prodi&#39;</span><span class="p">,</span> <span class="s1">&#39;abstrak&#39;</span><span class="p">]]</span>
+
+<span class="c1"># 6. Fungsi stemming</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">apply_stemming</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">stemmer</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+
+<span class="c1"># 7. Terapkan stemming</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;abstrak_stemming&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;abstrak&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">apply_stemming</span><span class="p">)</span>
+
+<span class="c1"># 8. Lematisasi sederhana (manual, opsional)</span>
+<span class="c1"># Bahasa Indonesia tidak punya lemmatizer default seperti bahasa Inggris,</span>
+<span class="c1"># tapi kita bisa bikin kamus dasar untuk beberapa kata umum.</span>
+<span class="n">lemma_dict</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;berlari&quot;</span><span class="p">:</span> <span class="s2">&quot;lari&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;makanan&quot;</span><span class="p">:</span> <span class="s2">&quot;makan&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;minuman&quot;</span><span class="p">:</span> <span class="s2">&quot;minum&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;bermain&quot;</span><span class="p">:</span> <span class="s2">&quot;main&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;tertidur&quot;</span><span class="p">:</span> <span class="s2">&quot;tidur&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;menjalankan&quot;</span><span class="p">:</span> <span class="s2">&quot;jalan&quot;</span>
+<span class="p">}</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">apply_lemmatization</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="n">words</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="n">lemmas</span> <span class="o">=</span> <span class="p">[</span><span class="n">lemma_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">word</span><span class="p">)</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">]</span>
+    <span class="k">return</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lemmas</span><span class="p">)</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;abstrak_lematisasi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;abstrak_stemming&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">apply_lemmatization</span><span class="p">)</span>
+
+<span class="c1"># 9. Simpan hasil</span>
+<span class="n">output_path</span> <span class="o">=</span> <span class="s2">&quot;/content/drive/MyDrive/PPW/pta_fatek_stemming_lemma.csv&quot;</span>
+<span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">output_path</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8-sig&#39;</span><span class="p">)</span>
+
+<span class="c1"># 10. Tampilkan contoh hasil</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;✅ Proses stemming dan lemmatisasi selesai.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;abstrak&#39;</span><span class="p">,</span> <span class="s1">&#39;abstrak_stemming&#39;</span><span class="p">,</span> <span class="s1">&#39;abstrak_lematisasi&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: Sastrawi in /usr/local/lib/python3.12/dist-packages (1.0.1)
+✅ Proses stemming dan lemmatisasi selesai.
+                                             abstrak  \
+0  Sistem  informasi  akademik  (SIAKAD) merupaka...   
+1  Berjalannya koneksi jaringan komputer dengan l...   
+2  Web server adalah sebuah perangkat lunak serve...   
+3  Penjadwalan  kuliah  di  Perguruan  Tinggi  me...   
+4  Seiring perkembangan teknologi yang ada diduni...   
+
+                                    abstrak_stemming  \
+0  sistem informasi akademik siakad rupa sistem i...   
+1  jalan koneksi jaring komputer dengan lancar da...   
+2  web server adalah buah perangkat lunak server ...   
+3  jadwal kuliah di guru tinggi rupa masalah yang...   
+4  iring kembang teknologi yang ada dunia muncul ...   
+
+                                  abstrak_lematisasi  
+0  sistem informasi akademik siakad rupa sistem i...  
+1  jalan koneksi jaring komputer dengan lancar da...  
+2  web server adalah buah perangkat lunak server ...  
+3  jadwal kuliah di guru tinggi rupa masalah yang...  
+4  iring kembang teknologi yang ada dunia muncul ...  
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="tokenisasi">
+<h2>tokenisasi<a class="headerlink" href="#tokenisasi" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. Install NLTK (kalau belum) - Already done</span>
+<span class="c1"># !pip install nltk</span>
+
+<span class="c1"># 2. Import</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="c1"># import nltk # No longer needed for simple split tokenization</span>
+<span class="c1"># nltk.download(&#39;punkt&#39;)  # download tokenizer - No longer needed</span>
+<span class="c1"># from nltk.tokenize import word_tokenize # No longer needed</span>
+
+<span class="c1"># 3. Baca file hasil stemming &amp; lemma (or use the existing df)</span>
+<span class="c1"># Assuming the DataFrame &#39;df&#39; from the previous steps is available and contains &#39;abstrak_lematisasi&#39;</span>
+<span class="c1"># If you are running this cell independently, load the file:</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">file_path</span> <span class="o">=</span> <span class="s2">&quot;/content/drive/MyDrive/PPW/pta_fatek_stemming_lemma.csv&quot;</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✅ File loaded from </span><span class="si">{</span><span class="n">file_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;❌ File not found at </span><span class="si">{</span><span class="n">file_path</span><span class="si">}</span><span class="s2">. Please ensure the previous steps were run or load the correct file.&quot;</span><span class="p">)</span>
+    <span class="c1"># If file not found, try to use the existing df if available</span>
+    <span class="k">if</span> <span class="s1">&#39;df&#39;</span> <span class="ow">in</span> <span class="nb">globals</span><span class="p">()</span> <span class="ow">and</span> <span class="s1">&#39;abstrak_lematisasi&#39;</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;✅ Using existing DataFrame from previous steps.&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;❌ No suitable DataFrame found. Cannot proceed.&quot;</span><span class="p">)</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1"># Set df to None to prevent further errors</span>
+
+<span class="k">if</span> <span class="n">df</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="s1">&#39;abstrak_lematisasi&#39;</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+    <span class="c1"># 4. Tokenisasi pakai split()</span>
+    <span class="c1"># def tokenize_text(text): # Original NLTK function</span>
+    <span class="c1">#     return word_tokenize(str(text))</span>
+
+    <span class="c1"># Using split() for tokenization</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;token&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;abstrak_lematisasi&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+
+    <span class="c1"># 5. Simpan hasil ke file baru</span>
+    <span class="n">output_path</span> <span class="o">=</span> <span class="s2">&quot;/content/drive/MyDrive/PPW/pta_fatek_tokenisasi.csv&quot;</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">output_path</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8-sig&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✅ Tokenisasi selesai. Hasil disimpan ke: </span><span class="si">{</span><span class="n">output_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># 6. Lihat hasil contoh</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;abstrak_lematisasi&#39;</span><span class="p">,</span> <span class="s1">&#39;token&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tokenization could not be performed due to missing data.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>✅ File loaded from /content/drive/MyDrive/PPW/pta_fatek_stemming_lemma.csv
+✅ Tokenisasi selesai. Hasil disimpan ke: /content/drive/MyDrive/PPW/pta_fatek_tokenisasi.csv
+                                  abstrak_lematisasi  \
+0  sistem informasi akademik siakad rupa sistem i...   
+1  jalan koneksi jaring komputer dengan lancar da...   
+2  web server adalah buah perangkat lunak server ...   
+3  jadwal kuliah di guru tinggi rupa masalah yang...   
+4  iring kembang teknologi yang ada dunia muncul ...   
+
+                                               token  
+0  [sistem, informasi, akademik, siakad, rupa, si...  
+1  [jalan, koneksi, jaring, komputer, dengan, lan...  
+2  [web, server, adalah, buah, perangkat, lunak, ...  
+3  [jadwal, kuliah, di, guru, tinggi, rupa, masal...  
+4  [iring, kembang, teknologi, yang, ada, dunia, ...  
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="crawling-berita">
+<h1>Crawling Berita<a class="headerlink" href="#crawling-berita" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Path file kedua</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="c1"># Baca file CSV</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;/content/drive/MyDrive/PPW/CrawlBerita_Kesehatan-Pariwisata.csv&quot;</span><span class="p">)</span>
+
+<span class="c1"># Tampilkan informasi total entri</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;📊 Total entri: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;✅ Data berhasil diambil&quot;</span><span class="p">)</span>
+
+<span class="c1"># Tampilkan tabel rapih</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>📊 Total entri: 300
+✅ Data berhasil diambil
+</pre></div>
+</div>
+<div class="output text_html">
+  <div id="df-e09cd1b4-8194-4308-ac73-1fb94e8a8eb8" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id_berita</th>
+      <th>judul_berita</th>
+      <th>isi_berita</th>
+      <th>kategori_berita</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>Pasien Mayapada Hospital Kini Bisa Nikmati Ant...</td>
+      <td>Jakarta - Mayapada Healthcare dan BMW Astra me...</td>
+      <td>Kesehatan</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>Cucu Mahfud MD Keracunan MBG di Jogja, Kepala ...</td>
+      <td>Jakarta - Kepala Badan Gizi Nasional (BGN) Dad...</td>
+      <td>Kesehatan</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>Tuai Polemik, Ini Alasan BGN Masih Bolehkan Ul...</td>
+      <td>Jakarta - Badan Gizi Nasional (BGN) masih memp...</td>
+      <td>Kesehatan</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>Kepala BGN Sebut Bolehkan UPF di Menu MBG, Con...</td>
+      <td>Jakarta - Badan Gizi Nasional (BGN) ramai dikr...</td>
+      <td>Kesehatan</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>Kepala BPOM RI Tekankan Pentingnya Lindungi Ra...</td>
+      <td>Jakarta - Kepala Badan Pengawas Obat dan Makan...</td>
+      <td>Kesehatan</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>295</th>
+      <td>296</td>
+      <td>Warga Bali Keluhkan Tembok GWK Halangi Akses, ...</td>
+      <td>Badung - Pembangunan tembok di area Garuda Wis...</td>
+      <td>Pariwisata</td>
+    </tr>
+    <tr>
+      <th>296</th>
+      <td>297</td>
+      <td>Topan Ragasa Berlalu, Makau Buka Kembali Kasin...</td>
+      <td>Makau - Makau menjadi salah satu wilayah yang ...</td>
+      <td>Pariwisata</td>
+    </tr>
+    <tr>
+      <th>297</th>
+      <td>298</td>
+      <td>Pariwisata Tak Melulu soal Liburan, Industri H...</td>
+      <td>Jakarta - Pariwisata berkelanjutan menjadi waj...</td>
+      <td>Pariwisata</td>
+    </tr>
+    <tr>
+      <th>298</th>
+      <td>299</td>
+      <td>Ngeri, Penumpang Digigit Tikus di Ruang Tunggu...</td>
+      <td>Jakarta - Sebuah insiden menjijikkan terjadi d...</td>
+      <td>Pariwisata</td>
+    </tr>
+    <tr>
+      <th>299</th>
+      <td>300</td>
+      <td>Topan Ragasa Hantam China, 2 Juta Orang Dievak...</td>
+      <td>Jakarta - Topan super Ragasa, siklon tropis te...</td>
+      <td>Pariwisata</td>
+    </tr>
+  </tbody>
+</table>
+<p>300 rows × 4 columns</p>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-e09cd1b4-8194-4308-ac73-1fb94e8a8eb8')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-e09cd1b4-8194-4308-ac73-1fb94e8a8eb8 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-e09cd1b4-8194-4308-ac73-1fb94e8a8eb8');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+    <div id="df-d24a5bba-78e3-4f22-86e7-88dff223f1bf">
+      <button class="colab-df-quickchart" onclick="quickchart('df-d24a5bba-78e3-4f22-86e7-88dff223f1bf')"
+                title="Suggest charts"
+                style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+     width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+    </g>
+</svg>
+      </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+      <script>
+        async function quickchart(key) {
+          const quickchartButtonEl =
+            document.querySelector('#' + key + ' button');
+          quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+          quickchartButtonEl.classList.add('colab-df-spinner');
+          try {
+            const charts = await google.colab.kernel.invokeFunction(
+                'suggestCharts', [key], {});
+          } catch (error) {
+            console.error('Error during call to suggestCharts:', error);
+          }
+          quickchartButtonEl.classList.remove('colab-df-spinner');
+          quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+        }
+        (() => {
+          let quickchartButtonEl =
+            document.querySelector('#df-d24a5bba-78e3-4f22-86e7-88dff223f1bf button');
+          quickchartButtonEl.style.display =
+            google.colab.kernel.accessAllowed ? 'block' : 'none';
+        })();
+      </script>
+    </div>
+
+  <div id="id_e355f17c-495b-4e7f-adf0-3144d19f9c72">
+    <style>
+      .colab-df-generate {
+        background-color: #E8F0FE;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        display: none;
+        fill: #1967D2;
+        height: 32px;
+        padding: 0 0 0 0;
+        width: 32px;
+      }
+
+      .colab-df-generate:hover {
+        background-color: #E2EBFA;
+        box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+        fill: #174EA6;
+      }
+
+      [theme=dark] .colab-df-generate {
+        background-color: #3B4455;
+        fill: #D2E3FC;
+      }
+
+      [theme=dark] .colab-df-generate:hover {
+        background-color: #434B5C;
+        box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+        filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+        fill: #FFFFFF;
+      }
+    </style>
+    <button class="colab-df-generate" onclick="generateWithVariable('df')"
+            title="Generate code using this dataframe."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M7,19H8.4L18.45,9,17,7.55,7,17.6ZM5,21V16.75L18.45,3.32a2,2,0,0,1,2.83,0l1.4,1.43a1.91,1.91,0,0,1,.58,1.4,1.91,1.91,0,0,1-.58,1.4L9.25,21ZM18.45,9,17,7.55Zm-12,3A5.31,5.31,0,0,0,4.9,8.1,5.31,5.31,0,0,0,1,6.5,5.31,5.31,0,0,0,4.9,4.9,5.31,5.31,0,0,0,6.5,1,5.31,5.31,0,0,0,8.1,4.9,5.31,5.31,0,0,0,12,6.5,5.46,5.46,0,0,0,6.5,12Z"/>
+  </svg>
+    </button>
+    <script>
+      (() => {
+      const buttonEl =
+        document.querySelector('#id_e355f17c-495b-4e7f-adf0-3144d19f9c72 button.colab-df-generate');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      buttonEl.onclick = () => {
+        google.colab.notebook.generateWithVariable('df');
+      }
+      })();
+    </script>
+  </div>
+
+    </div>
+  </div>
+</div></div>
+</div>
+<section id="id1">
+<h2>penghapusan kata umum<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">nltk</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">nltk.corpus</span><span class="w"> </span><span class="kn">import</span> <span class="n">stopwords</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+
+<span class="c1"># --- 1. Download stopwords bahasa Indonesia (kalau belum) ---</span>
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;stopwords&#39;</span><span class="p">)</span>
+
+<span class="c1"># --- 2. Tentukan path file ---</span>
+<span class="n">file_path</span> <span class="o">=</span> <span class="s2">&quot;/content/drive/MyDrive/PPW/CrawlBerita_Kesehatan-Pariwisata.csv&quot;</span>  <span class="c1"># sesuaikan jika file ada di folder lain</span>
+
+<span class="c1"># --- 3. Cek apakah file tersedia ---</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">file_path</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;❌ File &#39;</span><span class="si">{</span><span class="n">file_path</span><span class="si">}</span><span class="s2">&#39; tidak ditemukan.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pastikan file sudah diupload atau pathnya benar.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="c1"># --- 4. Baca dataset ---</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✅ File ditemukan! Total entri: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># --- 5. Ambil kolom penting (sesuaikan dengan nama kolom di file berita) ---</span>
+    <span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="n">col</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;judul_berita&#39;</span><span class="p">,</span> <span class="s1">&#39;kategori_berita&#39;</span><span class="p">,</span> <span class="s1">&#39;isi_berita&#39;</span><span class="p">]):</span>
+        <span class="n">df_berita</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;judul_berita&#39;</span><span class="p">,</span> <span class="s1">&#39;kategori_berita&#39;</span><span class="p">,</span> <span class="s1">&#39;isi_berita&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span> <span class="c1"># Create a copy to avoid SettingWithCopyWarning</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;⚠️ Kolom &#39;judul_berita&#39;, &#39;kategori_berita&#39;, atau &#39;isi_berita&#39; tidak ditemukan dalam file CSV.&quot;</span><span class="p">)</span>
+        <span class="n">df_berita</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1"># Set df_berita to None if columns are not found</span>
+
+    <span class="k">if</span> <span class="n">df_berita</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="c1"># --- 6. Ambil stopwords bahasa Indonesia ---</span>
+        <span class="n">stop_words</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s1">&#39;indonesian&#39;</span><span class="p">))</span>
+
+        <span class="c1"># --- 7. Fungsi untuk hapus stopwords ---</span>
+        <span class="k">def</span><span class="w"> </span><span class="nf">remove_stopwords</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">isna</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+                <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+            <span class="n">words</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+            <span class="n">filtered</span> <span class="o">=</span> <span class="p">[</span><span class="n">w</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">words</span> <span class="k">if</span> <span class="n">w</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">stop_words</span><span class="p">]</span>
+            <span class="k">return</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">filtered</span><span class="p">)</span>
+
+        <span class="c1"># --- 8. Terapkan ke kolom isi_berita ---</span>
+        <span class="n">df_berita</span><span class="p">[</span><span class="s1">&#39;isi_berita_no_stopwords&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_berita</span><span class="p">[</span><span class="s1">&#39;isi_berita&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">remove_stopwords</span><span class="p">)</span>
+
+        <span class="c1"># --- 9. Simpan hasil ke file baru ---</span>
+        <span class="n">output_file</span> <span class="o">=</span> <span class="s2">&quot;berita_no_stopwords.csv&quot;</span>
+        <span class="n">df_berita</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">output_file</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8-sig&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;📁 Stopword removal selesai. Hasil disimpan ke: </span><span class="si">{</span><span class="n">output_file</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="c1"># --- 10. Tampilkan contoh hasil ---</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">df_berita</span><span class="p">[[</span><span class="s1">&#39;isi_berita&#39;</span><span class="p">,</span> <span class="s1">&#39;isi_berita_no_stopwords&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>✅ File ditemukan! Total entri: 300
+📁 Stopword removal selesai. Hasil disimpan ke: berita_no_stopwords.csv
+                                          isi_berita  \
+0  Jakarta - Mayapada Healthcare dan BMW Astra me...   
+1  Jakarta - Kepala Badan Gizi Nasional (BGN) Dad...   
+2  Jakarta - Badan Gizi Nasional (BGN) masih memp...   
+3  Jakarta - Badan Gizi Nasional (BGN) ramai dikr...   
+4  Jakarta - Kepala Badan Pengawas Obat dan Makan...   
+5  Jakarta - Kasus kontaminasi radiasi Cesium-137...   
+6  Jakarta - Hari ini, Rabu (1 Oktober 2025) DPR ...   
+7  Jakarta - Anggota DPR RI Komisi IX, Edy Wuryan...   
+8  Jakarta - Regulator federal di Amerika Serikat...   
+9  Daftar Isi Apa Itu Operasi Bariatrik? Jenis-je...   
+
+                             isi_berita_no_stopwords  
+0  jakarta - mayapada healthcare bmw astra menjal...  
+1  jakarta - kepala badan gizi nasional (bgn) dad...  
+2  jakarta - badan gizi nasional (bgn) memperbole...  
+3  jakarta - badan gizi nasional (bgn) ramai dikr...  
+4  jakarta - kepala badan pengawas obat makanan (...  
+5  jakarta - kontaminasi radiasi cesium-137 (cs-1...  
+6  jakarta - ini, rabu (1 oktober 2025) dpr meman...  
+7  jakarta - anggota dpr ri komisi ix, edy wuryan...  
+8  jakarta - regulator federal amerika serikat me...  
+9  daftar isi operasi bariatrik? jenis-jenis oper...  
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data] Downloading package stopwords to /root/nltk_data...
+[nltk_data]   Unzipping corpora/stopwords.zip.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id2">
+<h2>menghilangkan simbol tanda baca<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">nltk</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">nltk.corpus</span><span class="w"> </span><span class="kn">import</span> <span class="n">stopwords</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span>  <span class="c1"># &lt;--- penting untuk hapus tanda baca</span>
+
+<span class="c1"># --- 1. Download stopwords bahasa Indonesia (kalau belum) ---</span>
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;stopwords&#39;</span><span class="p">)</span>
+
+<span class="c1"># --- 2. Tentukan path file ---</span>
+<span class="n">file_path</span> <span class="o">=</span> <span class="s2">&quot;/content/drive/MyDrive/PPW/CrawlBerita_Kesehatan-Pariwisata.csv&quot;</span>  <span class="c1"># sesuaikan jika file ada di folder lain</span>
+
+<span class="c1"># --- 3. Cek apakah file tersedia ---</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">file_path</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;❌ File &#39;</span><span class="si">{</span><span class="n">file_path</span><span class="si">}</span><span class="s2">&#39; tidak ditemukan.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="c1"># --- 4. Baca dataset ---</span>
+    <span class="n">df_berita</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="c1"># Use a different variable name to avoid conflict</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✅ File ditemukan! Total entri: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">df_berita</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># --- 5. Pastikan kolom tersedia (gunakan nama kolom dari file berita) ---</span>
+    <span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="n">col</span> <span class="ow">in</span> <span class="n">df_berita</span><span class="o">.</span><span class="n">columns</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;judul_berita&#39;</span><span class="p">,</span> <span class="s1">&#39;kategori_berita&#39;</span><span class="p">,</span> <span class="s1">&#39;isi_berita&#39;</span><span class="p">]):</span>
+        <span class="c1"># Select the relevant columns and create a copy to avoid SettingWithCopyWarning</span>
+        <span class="n">df_berita</span> <span class="o">=</span> <span class="n">df_berita</span><span class="p">[[</span><span class="s1">&#39;judul_berita&#39;</span><span class="p">,</span> <span class="s1">&#39;kategori_berita&#39;</span><span class="p">,</span> <span class="s1">&#39;isi_berita&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;⚠️ Kolom &#39;judul_berita&#39;, &#39;kategori_berita&#39;, atau &#39;isi_berita&#39; tidak ditemukan dalam file CSV.&quot;</span><span class="p">)</span>
+        <span class="n">df_berita</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1"># Set to None if columns are not found</span>
+
+    <span class="k">if</span> <span class="n">df_berita</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="c1"># --- 6. Ambil stopwords bahasa Indonesia ---</span>
+        <span class="n">stop_words</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s1">&#39;indonesian&#39;</span><span class="p">))</span>
+
+        <span class="c1"># --- 7. Fungsi hapus tanda baca ---</span>
+        <span class="k">def</span><span class="w"> </span><span class="nf">remove_punctuation</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">isna</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+                <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+            <span class="c1"># Hapus semua karakter non huruf dan spasi</span>
+            <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[^a-zA-Z0-9\s]&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">text</span>
+
+        <span class="c1"># --- 8. Fungsi hapus stopwords ---</span>
+        <span class="k">def</span><span class="w"> </span><span class="nf">remove_stopwords</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+            <span class="n">words</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+            <span class="n">filtered</span> <span class="o">=</span> <span class="p">[</span><span class="n">w</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">words</span> <span class="k">if</span> <span class="n">w</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">stop_words</span><span class="p">]</span>
+            <span class="k">return</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">filtered</span><span class="p">)</span>
+
+        <span class="c1"># --- 9. Bersihkan tanda baca dulu dari kolom &#39;isi_berita&#39; ---</span>
+        <span class="n">df_berita</span><span class="p">[</span><span class="s1">&#39;isi_berita_clean&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_berita</span><span class="p">[</span><span class="s1">&#39;isi_berita&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">remove_punctuation</span><span class="p">)</span>
+
+        <span class="c1"># --- 10. Lalu hapus stopwords dari kolom &#39;isi_berita_clean&#39; ---</span>
+        <span class="n">df_berita</span><span class="p">[</span><span class="s1">&#39;isi_berita_no_stopwords&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_berita</span><span class="p">[</span><span class="s1">&#39;isi_berita_clean&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">remove_stopwords</span><span class="p">)</span>
+
+        <span class="c1"># --- 11. Simpan hasil ---</span>
+        <span class="n">output_file</span> <span class="o">=</span> <span class="s2">&quot;berita_clean.csv&quot;</span>
+        <span class="n">df_berita</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">output_file</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8-sig&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;🧹 Pembersihan selesai! File disimpan sebagai: </span><span class="si">{</span><span class="n">output_file</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="c1"># --- 12. Tampilkan contoh hasil ---</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">df_berita</span><span class="p">[[</span><span class="s1">&#39;isi_berita&#39;</span><span class="p">,</span> <span class="s1">&#39;isi_berita_clean&#39;</span><span class="p">,</span> <span class="s1">&#39;isi_berita_no_stopwords&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data] Downloading package stopwords to /root/nltk_data...
+[nltk_data]   Package stopwords is already up-to-date!
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>✅ File ditemukan! Total entri: 300
+🧹 Pembersihan selesai! File disimpan sebagai: berita_clean.csv
+                                          isi_berita  \
+0  Jakarta - Mayapada Healthcare dan BMW Astra me...   
+1  Jakarta - Kepala Badan Gizi Nasional (BGN) Dad...   
+2  Jakarta - Badan Gizi Nasional (BGN) masih memp...   
+3  Jakarta - Badan Gizi Nasional (BGN) ramai dikr...   
+4  Jakarta - Kepala Badan Pengawas Obat dan Makan...   
+5  Jakarta - Kasus kontaminasi radiasi Cesium-137...   
+6  Jakarta - Hari ini, Rabu (1 Oktober 2025) DPR ...   
+7  Jakarta - Anggota DPR RI Komisi IX, Edy Wuryan...   
+8  Jakarta - Regulator federal di Amerika Serikat...   
+9  Daftar Isi Apa Itu Operasi Bariatrik? Jenis-je...   
+
+                                    isi_berita_clean  \
+0  Jakarta  Mayapada Healthcare dan BMW Astra men...   
+1  Jakarta  Kepala Badan Gizi Nasional BGN Dadan ...   
+2  Jakarta  Badan Gizi Nasional BGN masih memperb...   
+3  Jakarta  Badan Gizi Nasional BGN ramai dikriti...   
+4  Jakarta  Kepala Badan Pengawas Obat dan Makana...   
+5  Jakarta  Kasus kontaminasi radiasi Cesium137 C...   
+6  Jakarta  Hari ini Rabu 1 Oktober 2025 DPR mema...   
+7  Jakarta  Anggota DPR RI Komisi IX Edy Wuryanto...   
+8  Jakarta  Regulator federal di Amerika Serikat ...   
+9  Daftar Isi Apa Itu Operasi Bariatrik Jenisjeni...   
+
+                             isi_berita_no_stopwords  
+0  jakarta mayapada healthcare bmw astra menjalin...  
+1  jakarta kepala badan gizi nasional bgn dadan h...  
+2  jakarta badan gizi nasional bgn memperbolehkan...  
+3  jakarta badan gizi nasional bgn ramai dikritik...  
+4  jakarta kepala badan pengawas obat makanan bpo...  
+5  jakarta kontaminasi radiasi cesium137 cs137 ka...  
+6  jakarta rabu 1 oktober 2025 dpr memanggil bada...  
+7  jakarta anggota dpr ri komisi ix edy wuryanto ...  
+8  jakarta regulator federal amerika serikat mend...  
+9  daftar isi operasi bariatrik jenisjenis operas...  
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id3">
+<h2>cek ejaan pembakuan kata<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="id4">
+<h2>stemming dan lematisasi<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. Import</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">Sastrawi.Stemmer.StemmerFactory</span><span class="w"> </span><span class="kn">import</span> <span class="n">StemmerFactory</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+
+<span class="c1"># 2. Buat stemmer</span>
+<span class="n">factory</span> <span class="o">=</span> <span class="n">StemmerFactory</span><span class="p">()</span>
+<span class="n">stemmer</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="n">create_stemmer</span><span class="p">()</span>
+
+<span class="c1"># 3. Baca dataset</span>
+<span class="n">file_path</span> <span class="o">=</span> <span class="s2">&quot;/content/drive/MyDrive/PPW/CrawlBerita_Kesehatan-Pariwisata.csv&quot;</span>
+
+<span class="n">df_berita</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✅ File berita ditemukan! Total entri: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">df_berita</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># 4. Bersihkan &amp; stemming</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">bersihkan_text</span><span class="p">(</span><span class="n">teks</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">isna</span><span class="p">(</span><span class="n">teks</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">teks</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">teks</span><span class="p">)</span>
+    <span class="n">teks</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[^a-zA-Z0-9\s]&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">teks</span><span class="p">)</span>  <span class="c1"># hapus tanda baca</span>
+    <span class="n">teks</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\s+&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">teks</span><span class="p">)</span>  <span class="c1"># hapus spasi berlebih</span>
+    <span class="k">return</span> <span class="n">teks</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">apply_stemming</span><span class="p">(</span><span class="n">teks</span><span class="p">):</span>
+    <span class="n">teks_bersih</span> <span class="o">=</span> <span class="n">bersihkan_text</span><span class="p">(</span><span class="n">teks</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">stemmer</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">teks_bersih</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="s1">&#39;isi_berita&#39;</span> <span class="ow">in</span> <span class="n">df_berita</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+    <span class="n">df_berita</span><span class="p">[</span><span class="s1">&#39;isi_berita_bersih&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_berita</span><span class="p">[</span><span class="s1">&#39;isi_berita&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">bersihkan_text</span><span class="p">)</span>
+    <span class="n">df_berita</span><span class="p">[</span><span class="s1">&#39;isi_berita_stemming&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_berita</span><span class="p">[</span><span class="s1">&#39;isi_berita_bersih&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">apply_stemming</span><span class="p">)</span>
+
+    <span class="c1"># 5. Placeholder lemmatisasi (sama dengan hasil stemming)</span>
+    <span class="n">df_berita</span><span class="p">[</span><span class="s1">&#39;isi_berita_lematisasi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_berita</span><span class="p">[</span><span class="s1">&#39;isi_berita_stemming&#39;</span><span class="p">]</span>
+
+    <span class="c1"># 6. Simpan hasil</span>
+    <span class="n">output_path</span> <span class="o">=</span> <span class="s2">&quot;/content/drive/MyDrive/PPW/berita_stemming_lemma.csv&quot;</span>
+    <span class="n">df_berita</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">output_path</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8-sig&#39;</span><span class="p">)</span>
+
+    <span class="c1"># 7. Tampilkan 10 baris pertama hasilnya</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">📌 Contoh hasil stemming &amp; lemmatisasi:&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">df_berita</span><span class="p">[[</span><span class="s1">&#39;isi_berita&#39;</span><span class="p">,</span> <span class="s1">&#39;isi_berita_stemming&#39;</span><span class="p">,</span> <span class="s1">&#39;isi_berita_lematisasi&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;⚠️ Kolom &#39;isi_berita&#39; tidak ditemukan dalam file CSV.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>✅ File berita ditemukan! Total entri: 300
+
+📌 Contoh hasil stemming &amp; lemmatisasi:
+                                          isi_berita  \
+0  Jakarta - Mayapada Healthcare dan BMW Astra me...   
+1  Jakarta - Kepala Badan Gizi Nasional (BGN) Dad...   
+2  Jakarta - Badan Gizi Nasional (BGN) masih memp...   
+3  Jakarta - Badan Gizi Nasional (BGN) ramai dikr...   
+4  Jakarta - Kepala Badan Pengawas Obat dan Makan...   
+5  Jakarta - Kasus kontaminasi radiasi Cesium-137...   
+6  Jakarta - Hari ini, Rabu (1 Oktober 2025) DPR ...   
+7  Jakarta - Anggota DPR RI Komisi IX, Edy Wuryan...   
+8  Jakarta - Regulator federal di Amerika Serikat...   
+9  Daftar Isi Apa Itu Operasi Bariatrik? Jenis-je...   
+
+                                 isi_berita_stemming  \
+0  jakarta mayapada healthcare dan bmw astra jali...   
+1  jakarta kepala badan gizi nasional bgn dad hin...   
+2  jakarta badan gizi nasional bgn masih boleh sa...   
+3  jakarta badan gizi nasional bgn ramai kritik p...   
+4  jakarta kepala badan awas obat dan makan bpom ...   
+5  jakarta kasus kontaminasi radiasi cesium 137 c...   
+6  jakarta hari ini rabu 1 oktober 2025 dpr pangg...   
+7  jakarta anggota dpr ri komisi ix edy wuryanto ...   
+8  jakarta regulator federal di amerika serikat d...   
+9  daftar isi apa itu operasi bariatrik jenis jen...   
+
+                               isi_berita_lematisasi  
+0  jakarta mayapada healthcare dan bmw astra jali...  
+1  jakarta kepala badan gizi nasional bgn dad hin...  
+2  jakarta badan gizi nasional bgn masih boleh sa...  
+3  jakarta badan gizi nasional bgn ramai kritik p...  
+4  jakarta kepala badan awas obat dan makan bpom ...  
+5  jakarta kasus kontaminasi radiasi cesium 137 c...  
+6  jakarta hari ini rabu 1 oktober 2025 dpr pangg...  
+7  jakarta anggota dpr ri komisi ix edy wuryanto ...  
+8  jakarta regulator federal di amerika serikat d...  
+9  daftar isi apa itu operasi bariatrik jenis jen...  
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>Sastrawi
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting Sastrawi
+  Downloading Sastrawi-1.0.1-py2.py3-none-any.whl.metadata (909 bytes)
+Downloading Sastrawi-1.0.1-py2.py3-none-any.whl (209 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">209.7/209.7 kB</span> <span class=" -Color -Color-Red">4.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hInstalling collected packages: Sastrawi
+Successfully installed Sastrawi-1.0.1
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id5">
+<h2>tokenisasi<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. Install library nltk (jika belum) - Already done</span>
+<span class="c1"># !pip install nltk</span>
+
+<span class="c1"># 2. Import</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="c1"># import nltk # No longer needed for simple split tokenization</span>
+<span class="c1"># nltk.download(&#39;punkt&#39;)  # download tokenizer - No longer needed</span>
+<span class="c1"># from nltk.tokenize import word_tokenize # No longer needed</span>
+
+<span class="c1"># 3. Baca file hasil stemming &amp; lemma berita (or use the existing df_berita)</span>
+<span class="c1"># Assuming the DataFrame &#39;df_berita&#39; from the previous steps is available and contains &#39;isi_berita_stemming&#39;</span>
+<span class="c1"># If you are running this cell independently, load the file:</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">file_path</span> <span class="o">=</span> <span class="s2">&quot;/content/drive/MyDrive/PPW/berita_stemming_lemma.csv&quot;</span> <span class="c1"># Use the path for the news data</span>
+    <span class="n">df_berita</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✅ File loaded from </span><span class="si">{</span><span class="n">file_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;❌ File not found at </span><span class="si">{</span><span class="n">file_path</span><span class="si">}</span><span class="s2">. Please ensure the previous steps were run or load the correct file.&quot;</span><span class="p">)</span>
+    <span class="c1"># If file not found, try to use the existing df_berita if available</span>
+    <span class="k">if</span> <span class="s1">&#39;df_berita&#39;</span> <span class="ow">in</span> <span class="nb">globals</span><span class="p">()</span> <span class="ow">and</span> <span class="s1">&#39;isi_berita_stemming&#39;</span> <span class="ow">in</span> <span class="n">df_berita</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;✅ Using existing DataFrame from previous steps.&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;❌ No suitable DataFrame found. Cannot proceed.&quot;</span><span class="p">)</span>
+        <span class="n">df_berita</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1"># Set df_berita to None to prevent further errors</span>
+
+<span class="k">if</span> <span class="n">df_berita</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="s1">&#39;isi_berita_stemming&#39;</span> <span class="ow">in</span> <span class="n">df_berita</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+    <span class="c1"># 4. Tokenisasi pakai split()</span>
+    <span class="c1"># def tokenisasi(teks): # Original NLTK function</span>
+    <span class="c1">#     if pd.isna(teks):</span>
+    <span class="c1">#         return []</span>
+    <span class="c1">#     # Tokenisasi pakai nltk</span>
+    <span class="c1">#     tokens = word_tokenize(str(teks))</span>
+    <span class="c1">#     # Opsional: buang token kosong atau spasi</span>
+    <span class="c1">#     tokens = [t for t in tokens if t.strip() != &quot;&quot;]</span>
+    <span class="c1">#     return tokens</span>
+
+    <span class="c1"># Using split() for tokenization on &#39;isi_berita_stemming&#39; column</span>
+    <span class="n">df_berita</span><span class="p">[</span><span class="s1">&#39;isi_berita_tokens&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_berita</span><span class="p">[</span><span class="s1">&#39;isi_berita_stemming&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+
+    <span class="c1"># 5. Simpan hasil ke file baru</span>
+    <span class="n">output_token_path</span> <span class="o">=</span> <span class="s2">&quot;/content/drive/MyDrive/PPW/berita_stemming_lemma_token.csv&quot;</span> <span class="c1"># Updated output file name</span>
+    <span class="n">df_berita</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">output_token_path</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8-sig&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✅ Tokenisasi selesai. Hasil disimpan ke: </span><span class="si">{</span><span class="n">output_token_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># 6. Lihat hasil contoh</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">📌 Contoh hasil tokenisasi:&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">df_berita</span><span class="p">[[</span><span class="s1">&#39;isi_berita_stemming&#39;</span><span class="p">,</span> <span class="s1">&#39;isi_berita_tokens&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tokenization could not be performed due to missing data.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>✅ File loaded from /content/drive/MyDrive/PPW/berita_stemming_lemma.csv
+✅ Tokenisasi selesai. Hasil disimpan ke: /content/drive/MyDrive/PPW/berita_stemming_lemma_token.csv
+
+📌 Contoh hasil tokenisasi:
+                                 isi_berita_stemming  \
+0  jakarta mayapada healthcare dan bmw astra jali...   
+1  jakarta kepala badan gizi nasional bgn dad hin...   
+2  jakarta badan gizi nasional bgn masih boleh sa...   
+3  jakarta badan gizi nasional bgn ramai kritik p...   
+4  jakarta kepala badan awas obat dan makan bpom ...   
+5  jakarta kasus kontaminasi radiasi cesium 137 c...   
+6  jakarta hari ini rabu 1 oktober 2025 dpr pangg...   
+7  jakarta anggota dpr ri komisi ix edy wuryanto ...   
+8  jakarta regulator federal di amerika serikat d...   
+9  daftar isi apa itu operasi bariatrik jenis jen...   
+
+                                   isi_berita_tokens  
+0  [jakarta, mayapada, healthcare, dan, bmw, astr...  
+1  [jakarta, kepala, badan, gizi, nasional, bgn, ...  
+2  [jakarta, badan, gizi, nasional, bgn, masih, b...  
+3  [jakarta, badan, gizi, nasional, bgn, ramai, k...  
+4  [jakarta, kepala, badan, awas, obat, dan, maka...  
+5  [jakarta, kasus, kontaminasi, radiasi, cesium,...  
+6  [jakarta, hari, ini, rabu, 1, oktober, 2025, d...  
+7  [jakarta, anggota, dpr, ri, komisi, ix, edy, w...  
+8  [jakarta, regulator, federal, di, amerika, ser...  
+9  [daftar, isi, apa, itu, operasi, bariatrik, je...  
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Crawling_Data.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Crawling Data</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Klasifikasi_dan_LDA.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Klasifikasi dan LDA</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Crawling Data PTA dan Berita</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#crawling-portal-tugas-akhir">Crawling Portal Tugas Akhir</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#link-keluar">Link Keluar</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#penghapusan-kata-umum">Penghapusan Kata umum</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menghilangkan-simbol-tanda-baca">Menghilangkan simbol tanda baca</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cek-ejaan-pembakuan-kata">Cek ejaan pembakuan kata</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stemming-dan-lematisasi">stemming dan lematisasi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tokenisasi">tokenisasi</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#crawling-berita">Crawling Berita</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">penghapusan kata umum</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">menghilangkan simbol tanda baca</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">cek ejaan pembakuan kata</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">stemming dan lematisasi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">tokenisasi</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By 23-032 Rahel Syalom Elisabeth Manalu
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
