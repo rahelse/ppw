@@ -381,6 +381,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-dataset">Load Dataset</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-sederhana">Graph Sederhana</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-komunitas">Analisis Komunitas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cek-komunitas-di-tiap-node">cek komunitas di tiap node</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-komunitas-13">graph komunitas 13</a></li>
 </ul>
             </nav>
         </div>
@@ -426,7 +428,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-3b7845db-009d-440c-aa1a-93e380f3b3e1" class="colab-df-container">
+  <div id="df-e5cd2011-384d-4311-aee8-1898f04cf1f5" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -481,7 +483,7 @@ document.write(`
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-3b7845db-009d-440c-aa1a-93e380f3b3e1')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-e5cd2011-384d-4311-aee8-1898f04cf1f5')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
 
@@ -533,12 +535,12 @@ document.write(`
 
     <script>
       const buttonEl =
-        document.querySelector('#df-3b7845db-009d-440c-aa1a-93e380f3b3e1 button.colab-df-convert');
+        document.querySelector('#df-e5cd2011-384d-4311-aee8-1898f04cf1f5 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-3b7845db-009d-440c-aa1a-93e380f3b3e1');
+        const element = document.querySelector('#df-e5cd2011-384d-4311-aee8-1898f04cf1f5');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -558,8 +560,8 @@ document.write(`
   </div>
 
 
-    <div id="df-f59b5175-5d04-4fef-bedd-9b196240936a">
-      <button class="colab-df-quickchart" onclick="quickchart('df-f59b5175-5d04-4fef-bedd-9b196240936a')"
+    <div id="df-94582c5d-c85b-40d4-873d-6bfe9628bf27">
+      <button class="colab-df-quickchart" onclick="quickchart('df-94582c5d-c85b-40d4-873d-6bfe9628bf27')"
                 title="Suggest charts"
                 style="display:none;">
 
@@ -678,7 +680,7 @@ document.write(`
         }
         (() => {
           let quickchartButtonEl =
-            document.querySelector('#df-f59b5175-5d04-4fef-bedd-9b196240936a button');
+            document.querySelector('#df-94582c5d-c85b-40d4-873d-6bfe9628bf27 button');
           quickchartButtonEl.style.display =
             google.colab.kernel.accessAllowed ? 'block' : 'none';
         })();
@@ -768,7 +770,6 @@ Modularity: 0.220
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Modularity Score          : </span><span class="si">{</span><span class="n">modularity_value</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="c1"># ======================================</span>
-<span class="c1"># 3. VISUALISASI GRAPH (tidak sederhana)</span>
 <span class="c1">#    Hanya ambil 500 node untuk menjaga performa visualisasi</span>
 <span class="c1"># ======================================</span>
 <span class="n">sub_nodes</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">())[:</span><span class="mi">500</span><span class="p">]</span>
@@ -804,10 +805,13 @@ Modularity: 0.220
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=== ANALISIS KOMUNITAS FACEBOOK ===</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="n">community_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">partition</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="s1">&#39;index&#39;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;community&#39;</span><span class="p">])</span>
-<span class="n">community_sizes</span> <span class="o">=</span> <span class="n">community_df</span><span class="p">[</span><span class="s1">&#39;community&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<span class="n">community_sizes</span> <span class="o">=</span> <span class="n">community_df</span><span class="p">[</span><span class="s1">&#39;community&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Top 10 komunitas berdasarkan jumlah anggota:&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">community_sizes</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Urutan komunitas dari jumlah anggota terkecil ke terbesar:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">community_sizes</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -822,22 +826,293 @@ Jumlah komunitas ditemukan: 16
 Modularity Score          : 0.8349
 </pre></div>
 </div>
-<img alt="_images/f3bbac8b9726ecf59d88490769e1be4344c202631f52f9cd8e81d70dcba2155c.png" src="_images/f3bbac8b9726ecf59d88490769e1be4344c202631f52f9cd8e81d70dcba2155c.png" />
+<img alt="_images/58531b99f1b628a4431afc1c015857ae6b225cd9fc7855917121ced961b1f085.png" src="_images/58531b99f1b628a4431afc1c015857ae6b225cd9fc7855917121ced961b1f085.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>=== ANALISIS KOMUNITAS FACEBOOK ===
 
 Top 10 komunitas berdasarkan jumlah anggota:
 community
-15    548
-4     535
-8     443
-1     433
-3     423
-0     350
-5     321
-11    237
-9     226
-14    206
+14     19
+2      19
+11     25
+12     61
+9      73
+6     129
+13    206
+15    226
+10    237
+5     323
 Name: count, dtype: int64
+Urutan komunitas dari jumlah anggota terkecil ke terbesar:
+community
+14     19
+2      19
+11     25
+12     61
+9      73
+6     129
+13    206
+15    226
+10    237
+5     323
+0     350
+3     423
+1     430
+7     435
+4     535
+8     548
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="cek-komunitas-di-tiap-node">
+<h2>cek komunitas di tiap node<a class="headerlink" href="#cek-komunitas-di-tiap-node" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">networkx</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nx</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">community</span><span class="w"> </span><span class="kn">import</span> <span class="n">community_louvain</span>
+
+<span class="c1"># ===============================</span>
+<span class="c1"># 1. Bangun Graph &amp; Komunitas</span>
+<span class="c1"># ===============================</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_pandas_edgelist</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">partition</span> <span class="o">=</span> <span class="n">community_louvain</span><span class="o">.</span><span class="n">best_partition</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>   <span class="c1"># komunitas setiap node</span>
+
+<span class="c1"># ===============================</span>
+<span class="c1"># 2. Hitung komunitas yang terhubung</span>
+<span class="c1"># ===============================</span>
+<span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">():</span>
+    <span class="n">node_comm</span> <span class="o">=</span> <span class="n">partition</span><span class="p">[</span><span class="n">node</span><span class="p">]</span>   <span class="c1"># komunitas node itu sendiri</span>
+
+    <span class="c1"># ambil semua tetangga node</span>
+    <span class="n">neighbors</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">neighbors</span><span class="p">(</span><span class="n">node</span><span class="p">))</span>
+
+    <span class="c1"># komunitas dari tetangga-tetangga itu</span>
+    <span class="n">neighbor_comms</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">list</span><span class="p">({</span><span class="n">partition</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">neighbors</span><span class="p">}))</span>
+
+    <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+        <span class="s2">&quot;node&quot;</span><span class="p">:</span> <span class="n">node</span><span class="p">,</span>
+        <span class="s2">&quot;komunitas_node&quot;</span><span class="p">:</span> <span class="n">node_comm</span><span class="p">,</span>
+        <span class="s2">&quot;komunitas_yang_terhubung&quot;</span><span class="p">:</span> <span class="n">neighbor_comms</span>
+    <span class="p">})</span>
+
+<span class="c1"># ===============================</span>
+<span class="c1"># 3. Convert ke DataFrame</span>
+<span class="c1"># ===============================</span>
+<span class="n">result_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+<span class="c1"># tampilkan 15 baris pertama</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">15</span><span class="p">))</span>
+
+<span class="c1"># ===============================</span>
+<span class="c1"># 4. Simpan ke CSV</span>
+<span class="c1"># ===============================</span>
+<span class="n">result_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;komunitas_node_dan_keterhubungan.csv&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">File berhasil disimpan: komunitas_node_dan_keterhubungan.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    node  komunitas_node komunitas_yang_terhubung
+0      0               0          [0, 1, 2, 4, 8]
+1      1               0                      [0]
+2      2               0                      [0]
+3      3               0                      [0]
+4      4               0                      [0]
+5      5               0                      [0]
+6      6               0                      [0]
+7      7               0                   [0, 4]
+8      8               0                      [0]
+9      9               0                      [0]
+10    10               0                      [0]
+11    11               0                      [0]
+12    12               0                      [0]
+13    13               0                      [0]
+14    14               0                      [0]
+
+File berhasil disimpan: komunitas_node_dan_keterhubungan.csv
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result_df</span><span class="p">[</span><span class="n">result_df</span><span class="p">[</span><span class="s1">&#39;node&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">4000</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-b8c14e34-ee29-4dfd-a930-374555638d76" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>node</th>
+      <th>komunitas_node</th>
+      <th>komunitas_yang_terhubung</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>4002</th>
+      <td>4000</td>
+      <td>13</td>
+      <td>[13]</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-b8c14e34-ee29-4dfd-a930-374555638d76')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-b8c14e34-ee29-4dfd-a930-374555638d76 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-b8c14e34-ee29-4dfd-a930-374555638d76');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+    </div>
+  </div>
+</div></div>
+</div>
+</section>
+<section id="graph-komunitas-13">
+<h2>graph komunitas 13<a class="headerlink" href="#graph-komunitas-13" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_comm</span> <span class="o">=</span> <span class="mi">13</span>
+
+<span class="c1"># Group nodes by community from the &#39;partition&#39; dictionary</span>
+<span class="n">members</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">node</span><span class="p">,</span> <span class="n">comm_id</span> <span class="ow">in</span> <span class="n">partition</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">comm_id</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">members</span><span class="p">:</span>
+        <span class="n">members</span><span class="p">[</span><span class="n">comm_id</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">members</span><span class="p">[</span><span class="n">comm_id</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">plot_comm</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">members</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Community </span><span class="si">{</span><span class="n">plot_comm</span><span class="si">}</span><span class="s2"> tidak ditemukan (max community id: </span><span class="si">{</span><span class="nb">max</span><span class="p">(</span><span class="n">members</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">nodes_comm</span> <span class="o">=</span> <span class="n">members</span><span class="p">[</span><span class="n">plot_comm</span><span class="p">]</span>
+    <span class="n">H</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">subgraph</span><span class="p">(</span><span class="n">nodes_comm</span><span class="p">)</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Community </span><span class="si">{</span><span class="n">plot_comm</span><span class="si">}</span><span class="s2"> -&gt; nodes: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">H</span><span class="o">.</span><span class="n">nodes</span><span class="p">())</span><span class="si">}</span><span class="s2">, edges: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">H</span><span class="o">.</span><span class="n">edges</span><span class="p">())</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># plot (size dan layout)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+    <span class="n">pos</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">spring_layout</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+    <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_nodes</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">node_size</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="s1">&#39;tab:blue&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+    <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_edges</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_labels</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>    <span class="c1"># show node ids</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Graph of Community </span><span class="si">{</span><span class="n">plot_comm</span><span class="si">}</span><span class="s2"> (nodes labelled by id)&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+    <span class="c1"># Simpan gambar</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;community_</span><span class="si">{</span><span class="n">plot_comm</span><span class="si">}</span><span class="s2">_graph.png&quot;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Saved figure: community_</span><span class="si">{</span><span class="n">plot_comm</span><span class="si">}</span><span class="s2">_graph.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Community 13 -&gt; nodes: 60, edges: 205
+</pre></div>
+</div>
+<img alt="_images/d4aff4c201772af36f00e82f3b79c13560716b09e4c715d82aac3ad903eaf99d.png" src="_images/d4aff4c201772af36f00e82f3b79c13560716b09e4c715d82aac3ad903eaf99d.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Saved figure: community_13_graph.png
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 640x480 with 0 Axes&gt;
 </pre></div>
 </div>
 </div>
@@ -903,6 +1178,8 @@ Name: count, dtype: int64
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-dataset">Load Dataset</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-sederhana">Graph Sederhana</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-komunitas">Analisis Komunitas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cek-komunitas-di-tiap-node">cek komunitas di tiap node</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-komunitas-13">graph komunitas 13</a></li>
 </ul>
   </nav></div>
 
